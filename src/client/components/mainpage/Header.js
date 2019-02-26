@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-
+import "../../assets/style/index.scss";
 export class Header extends Component {
   render() {
     return (
-        <div>
-            <p>this is a header</p>
-        </div>
-    )
+      <div className="header">
+        <p>this is a header</p>
+      </div>
+    );
   }
 }
 
