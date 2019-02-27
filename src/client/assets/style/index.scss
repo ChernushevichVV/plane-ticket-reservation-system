@@ -37,8 +37,9 @@
 .flight-info {
   align-items: center;
   margin: auto;
-  background-color: hsl(0, 83%, 56%);
+  background-color: hsla(196, 49%, 72%, 0.171);
   height: 50%;
   width: 50%;
   border: 1px solid hsl(234, 91%, 18%);
+  border-radius: 10px;
 }
