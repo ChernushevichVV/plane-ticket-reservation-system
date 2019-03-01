@@ -45,5 +45,15 @@
 }
 
 .date-picker {
+  min-width: 50px;
+  width: 60%;
+  height: 40px;
   margin: 10px 50px;
+  border-radius: 3px;
+}
+
+.date-picker-block {
+  display: flex;
+  width: 80%;
+  margin: auto;
 }

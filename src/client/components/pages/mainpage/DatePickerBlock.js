@@ -6,35 +6,54 @@ export class DatePickerBlock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      startDate: new Date()
+      startDate1: "",
+      startDate2: ""
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChange1 = this.handleChange1.bind(this);
+    this.handleChange2 = this.handleChange2.bind(this);
   }
 
-  handleChange(date) {
+  //solve the case with dates later
+  handleChange1(date) {
     this.setState({
-      startDate: date
+      startDate1:
+        +this.state.startDate2 <= +this.state.startDate1
+          ? date
+          : this.state.startDate2
     });
+  }
+
+  handleChange2(date) {
+    this.setState({
+      startDate2:
+        +this.state.startDate1 <= +this.state.startDate2
+          ? date
+          : this.state.startDate1
+    });
+  }
+
+  handleSelect(date) {
+    alert(date);
   }
 
   render() {
     return (
-      <div>
+      <div className="date-picker-block">
         <DatePicker
           className="date-picker"
-          placeholderText="Departure date"
-          selected={this.state.startDate}
-          onChange={this.handleChange}
+          onChange={this.handleChange1}
+          onSelect={this.handleSelect}
           monthsShown={2}
-          showMonthDropdown
+          selected={this.state.startDate1}
+          placeholderText="Departure date"
         />
         <DatePicker
           className="date-picker"
-          placeholderText="Return date"
-          selected={this.state.startDate}
-          onChange={this.handleChange}
+          onChange={this.handleChange2}
+          onSelect={this.handleSelect}
           monthsShown={2}
-          showMonthDropdown
+          selected={this.state.startDate2}
+          placeholderText="Return date"
         />
       </div>
     );
