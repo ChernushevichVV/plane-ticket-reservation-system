@@ -38,9 +38,9 @@ export class DatePickerBlock extends Component {
 
   render() {
     return (
-      <div className="date-picker-block">
+      <div className="date-picker">
         <DatePicker
-          className="date-picker"
+          className="date-picker__input"
           onChange={this.handleChange1}
           onSelect={this.handleSelect}
           monthsShown={2}
@@ -48,7 +48,7 @@ export class DatePickerBlock extends Component {
           placeholderText="Departure date"
         />
         <DatePicker
-          className="date-picker"
+          className="date-picker__input"
           onChange={this.handleChange2}
           onSelect={this.handleSelect}
           monthsShown={2}
