@@ -4,7 +4,6 @@ export class FlightInputForm extends Component {
   render() {
     return (
       <div className="flight-info">
-        <p>FlightInputForm</p>
         <DatePickerBlock />
       </div>
     );
