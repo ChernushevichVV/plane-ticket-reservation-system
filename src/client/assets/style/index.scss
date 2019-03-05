@@ -19,11 +19,6 @@
   border: 5px solid black;
 }
 
-//element
-.header__link {
-  background-color: hsl(0, 83%, 56%);
-}
-
 .section {
   top: 10%;
   bottom: 20%;
@@ -62,13 +57,23 @@
   display: flex;
   flex-flow: row wrap;
   width: 80%;
-  margin: auto;
+  margin-left: 10%;
+  border: 1px solid black;
+  justify-content: space-between;
 }
 
 .date-picker__input {
-  min-width: 50px;
-  width: 60%;
+  min-width: 3rem;
+  width: 80%;
   height: 40px;
-  margin: 10px 50px;
+  margin: 10px 0px;
   border-radius: 3px;
+  //border: 1px solid black;
+}
+
+.oneway-return {
+  border: 1px solid black;
+  font-size: 1.2rem;
+  margin-left: 10%;
+  width: 80%;
 }
