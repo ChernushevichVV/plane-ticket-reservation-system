@@ -11,16 +11,39 @@
 //block
 .header {
   position: fixed;
+  top: 0;
+  z-index: 999;
   font-size: 20px;
-  //background-color: silver;
+  background-color: silver;
   text-align: center;
   height: 10%;
   width: 100%;
   border: 5px solid black;
 }
 
+.sign-block {
+  margin: 10px 50px 0 10px;
+  float: right;
+  width: 30%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+}
+.sign-block__button {
+  display: relative;
+  margin: 10px;
+  height: 90%;
+  width: 100px;
+}
+.sign-block__button button {
+  font-size: 1.2em;
+  height: 90%;
+  width: 100px;
+  border-radius: 5px;
+}
+
 .section {
-  top: 10%;
+  top: 8%;
   bottom: 20%;
   position: relative;
   background-image: url(../images/air-1.jpg);
@@ -32,7 +55,7 @@
 }
 
 .footer {
-  top: 10%;
+  top: 8%;
   position: relative;
   border: 5px solid black;
   //background-color: rgba(252, 252, 9, 0.384);
@@ -51,29 +74,56 @@
   //border: 1px solid hsl(234, 91%, 18%);
   //opacity: 0.5;
   border-radius: 10px;
-}
-
-.date-picker {
-  display: flex;
-  flex-flow: row wrap;
-  width: 80%;
-  margin-left: 10%;
-  border: 1px solid black;
-  justify-content: space-between;
-}
-
-.date-picker__input {
-  min-width: 3rem;
-  width: 80%;
-  height: 40px;
-  margin: 10px 0px;
-  border-radius: 3px;
-  //border: 1px solid black;
+  .content {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    width: 80%;
+    margin: 1em 10%;
+    align-items: center;
+    //border: 1px solid black;
+  }
 }
 
 .oneway-return {
-  border: 1px solid black;
   font-size: 1.2rem;
-  margin-left: 10%;
-  width: 80%;
+}
+
+.oneway-return__input {
+  //tbd
+}
+
+.destination-block {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.destination-block__input {
+  min-width: 3rem;
+  width: 200px;
+  height: 40px;
+  margin: 0px 0px;
+  //border-radius: 3px;
+  border: 1px solid black;
+}
+.destination-block__input input {
+  //width: 90%;
+  height: 2em;
+  border-radius: 3px;
+}
+
+.date-picker {
+  //justify-content: space-between;
+}
+.date-picker__input {
+  min-width: 3rem;
+  width: 200px;
+  height: 50px;
+  margin: 0px 0px;
+  //border-radius: 3px;
+  border: 1px solid black;
+}
+.date-picker__input input {
+  //width: 90%;
+  height: 2em;
+  border-radius: 3px;
 }

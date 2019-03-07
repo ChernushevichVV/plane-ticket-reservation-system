@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FlightInputForm from "./FlightInputForm";
+import FlightInputForm from "./FlightInfoForm";
 
 export class Section extends Component {
   render() {

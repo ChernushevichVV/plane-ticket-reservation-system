@@ -38,23 +38,25 @@ export class DatePickerBlock extends Component {
 
   render() {
     return (
-      <div className="date-picker">
-        <DatePicker
-          className="date-picker__input"
-          onChange={this.handleChange1}
-          onSelect={this.handleSelect}
-          monthsShown={2}
-          selected={this.state.startDate1}
-          placeholderText="Departure date"
-        />
-        <DatePicker
-          className="date-picker__input"
-          onChange={this.handleChange2}
-          onSelect={this.handleSelect}
-          monthsShown={2}
-          selected={this.state.startDate2}
-          placeholderText="Return date"
-        />
+      <div className="content date-picker">
+        <div className="date-picker__input">
+          <DatePicker
+            onChange={this.handleChange1}
+            onSelect={this.handleSelect}
+            monthsShown={2}
+            selected={this.state.startDate1}
+            placeholderText="Departure date"
+          />
+        </div>
+        <div className="date-picker__input">
+          <DatePicker
+            onChange={this.handleChange2}
+            onSelect={this.handleSelect}
+            monthsShown={2}
+            selected={this.state.startDate2}
+            placeholderText="Return date"
+          />
+        </div>
       </div>
     );
   }
