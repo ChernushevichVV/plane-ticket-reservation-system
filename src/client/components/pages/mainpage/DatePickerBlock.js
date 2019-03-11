@@ -1,3 +1,6 @@
+//to do:
+//1) add style for disabled input
+
 import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -7,7 +10,8 @@ export class DatePickerBlock extends Component {
     super(props);
     this.state = {
       startDate1: "",
-      startDate2: ""
+      startDate2: "",
+      disableReturn: false
     };
     this.handleChange1 = this.handleChange1.bind(this);
     this.handleChange2 = this.handleChange2.bind(this);
@@ -55,6 +59,7 @@ export class DatePickerBlock extends Component {
             monthsShown={2}
             selected={this.state.startDate2}
             placeholderText="Return date"
+            disabled={this.state.disableReturn}
           />
         </div>
       </div>
