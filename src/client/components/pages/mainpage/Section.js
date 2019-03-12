@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import FlightInputForm from "./FlightInfoForm";
+import FlightInfoForm from "./FlightInfoForm";
 
 export class Section extends Component {
   render() {
     return (
       <div className="section">
-        <FlightInputForm />
+        <FlightInfoForm />
       </div>
     );
   }

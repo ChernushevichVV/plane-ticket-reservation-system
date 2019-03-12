@@ -5,51 +5,49 @@ import React, { Component } from "react";
 
 export class Stepper extends Component {
   state = {
-    adult: 1,
-    child: 0
+    value: this.props.minValue
   };
 
-  role = this.props.age;
-
-  addPassenger = () => {
-    this.setState((prevState, props) => ({
-      [this.role]: (prevState[this.role] += 1)
+  increment = () => {
+    this.setState(prevState => ({
+      value: prevState.value + 1
     }));
   };
 
-  deletePassenger = () => {
-    this.setState((prevState, props) => ({
-      [this.role]: (prevState[this.role] -= 1)
+  decrement = () => {
+    this.setState(prevState => ({
+      value: prevState.value - 1
     }));
   };
 
   render() {
-    const info = this.role === "adult" ? "(18+)" : "(0-18)";
+    const { minValue, label } = this.props;
+    const { value } = this.state;
 
     return (
       <div className="stepper-wrapper">
         <div className="stepper-input">
           <button
-            disabled={this.state.adult <= 1 && this.state.child <= 0}
+            disabled={value <= minValue}
             className="stepper-input__button button"
-            onClick={this.deletePassenger}
+            onClick={this.decrement}
           >
             -
           </button>
           <input
             type="text"
-            value={this.state[this.role]}
+            value={value}
             className="input stepper-input__input"
           />
           <button
-            disabled={this.state.adult >= 6 || this.state.child >= 6}
+            disabled={value >= 6}
             className="stepper-input__button button"
-            onClick={this.addPassenger}
+            onClick={this.increment}
           >
             +
           </button>
         </div>
-        <p>{this.role + info}</p>
+        <p>{label}</p>
       </div>
     );
   }
