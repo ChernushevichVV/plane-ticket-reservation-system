@@ -1,141 +1,15 @@
-@import "stepper";
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-.container {
-  height: 100vh;
-  width: 100%;
-}
 
-//block
-.header {
-  position: fixed;
-  top: 0;
-  z-index: 999;
-  font-size: 20px;
-  background-color: rgb(236, 233, 233);
-  text-align: center;
-  height: 5em;
-  width: 100%;
-  overflow: hidden;
-}
+@import "stepper";
 
-.sign-block {
-  margin: 10px 50px 0 10px;
-  float: right;
-  width: 30%;
-  height: 80%;
-  display: flex;
-  align-items: center;
-}
-.sign-block__button {
-  display: relative;
-  margin: 10px;
-  height: 90%;
-  width: 100px;
-}
-.sign-block__button button {
-  font-size: 1.2em;
-  height: 90%;
-  width: 100px;
-  border-radius: 5px;
-}
+@import "button";
 
-.section {
-  //position: fixed;
-  margin-top: 80px;
-  //bottom: 20%;
-  position: relative;
-  background-image: url(../images/air-1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 80vh;
-  //display: flex;
-}
+@import "input";
 
-.footer {
-  position: relative;
-  border: 1px solid black;
-  //background-color: rgba(252, 252, 9, 0.384);
-  width: 100%;
-  height: 20%;
-}
+@import "mainpage";
 
-.flight-info {
-  position: relative;
-  top: 20%;
-  align-items: center;
-  margin: auto;
-  background-color: rgba(41, 98, 202, 0.5);
-  height: 50%;
-  width: 50%;
-  //border: 1px solid hsl(234, 91%, 18%);
-  //opacity: 0.5;
-  border-radius: 10px;
-  .content {
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    width: 80%;
-    height: 23%;
-    margin: 0 10%;
-    align-items: center;
-    //border: 1px solid black;
-  }
-}
-
-.oneway-return {
-  font-size: 1.2em;
-}
-
-.oneway-return__input {
-  //tbd
-}
-
-.destination-block {
-  font-size: 0.8em;
-  font-weight: bold;
-}
-.destination-block__input {
-  min-width: 3rem;
-  width: 200px;
-  height: 40px;
-  margin: 0px 0px;
-}
-.destination-block__input input {
-  //width: 90%;
-  height: 2em;
-  border-radius: 3px;
-}
-
-.date-picker {
-  //justify-content: space-between;
-}
-.date-picker__input {
-  min-width: 3rem;
-  width: 200px;
-  height: 50px;
-  margin: 0px 0px;
-}
-.date-picker__input input {
-  height: 2em;
-  border-radius: 3px;
-}
-
-.search-button {
-  position: relative;
-  bottom: 3em;
-  right: 8em;
-  float: right;
-  font-size: 1.2em;
-  font-weight: 700;
-  height: 2.4em;
-  width: 8em;
-  border-radius: 5px;
-  color: #ffffff;
-  background-color: rgb(86, 214, 86);
-}
+@import "flightinfo";

@@ -1,0 +1,98 @@
+.sign-block {
+  margin: 10px 50px 0 10px;
+  float: right;
+  width: 30%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+
+  &__button {
+    display: relative;
+    margin: 10px;
+    height: 90%;
+    width: 100px;
+  }
+  &__button button {
+    font-size: 1.2em;
+    height: 90%;
+    width: 100px;
+    border-radius: 5px;
+  }
+}
+
+.flight-info {
+  position: relative;
+  top: 20%;
+  align-items: center;
+  margin: auto;
+  background-color: rgba(41, 98, 202, 0.5);
+  height: 50%;
+  width: 50%;
+  //border: 1px solid hsl(234, 91%, 18%);
+  //opacity: 0.5;
+  border-radius: 10px;
+  .content {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    width: 80%;
+    height: 23%;
+    margin: 0 10%;
+    align-items: center;
+    //border: 1px solid black;
+  }
+}
+
+.oneway-return {
+  font-size: 1.2em;
+
+  &__input {
+    //tbd
+  }
+}
+
+.destination-block {
+  font-size: 0.8em;
+  font-weight: bold;
+
+  &__input {
+    min-width: 3rem;
+    width: 200px;
+    height: 40px;
+    margin: 0px 0px;
+  }
+
+  &__input input {
+    height: 2em;
+    border-radius: 3px;
+  }
+}
+
+.date-picker {
+  //justify-content: space-between;
+
+  &__input {
+    min-width: 3rem;
+    width: 200px;
+    height: 50px;
+    margin: 0px 0px;
+  }
+  &__input input {
+    height: 2em;
+    border-radius: 3px;
+  }
+}
+
+.search-button {
+  position: relative;
+  bottom: 3em;
+  right: 8em;
+  float: right;
+  font-size: 1.2em;
+  font-weight: 700;
+  height: 2.4em;
+  width: 8em;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: rgb(71, 192, 71);
+}
