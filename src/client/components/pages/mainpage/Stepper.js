@@ -1,68 +1,55 @@
 //to do:
-//1) add style for disabled button
+//
 
 import React, { Component } from "react";
 
 export class Stepper extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      adult: 1,
-      child: 0
-    };
-    this.addPassenger = this.addPassenger.bind(this);
-    this.deletePassenger = this.deletePassenger.bind(this);
-  }
+  state = {
+    adult: 1,
+    child: 0
+  };
 
-  addPassenger(role) {
+  role = this.props.age;
+
+  addPassenger = () => {
     this.setState((prevState, props) => ({
-      [role]: (prevState[role] += 1)
+      [this.role]: (prevState[this.role] += 1)
     }));
-  }
-  deletePassenger(role) {
+  };
+
+  deletePassenger = () => {
     this.setState((prevState, props) => ({
-      [role]: (prevState[role] -= 1)
+      [this.role]: (prevState[this.role] -= 1)
     }));
-  }
+  };
 
   render() {
-    const info = this.props.age === "adult" ? "(18+)" : "(0-18)";
+    const info = this.role === "adult" ? "(18+)" : "(0-18)";
 
     return (
-      <div className="stepperWrapper">
-        <div className="stepperInput">
+      <div className="stepper-wrapper">
+        <div className="stepper-input">
           <button
-            disabled={
-              this.props.age === "adult"
-                ? this.state.adult <= 1
-                : this.state.child <= 0
-            }
-            className="button"
-            onClick={this.deletePassenger.bind(this, this.props.age)}
+            disabled={this.state.adult <= 1 && this.state.child <= 0}
+            className="stepper-input__button button"
+            onClick={this.deletePassenger}
           >
             -
           </button>
           <input
             type="text"
-            placeholder="Age"
-            value={
-              this.props.age === "adult" ? this.state.adult : this.state.child
-            }
-            className="input stepperInput__input"
+            value={this.state[this.role]}
+            className="input stepper-input__input"
           />
           <button
-            disabled={
-              this.props.age === "adult"
-                ? this.state.adult >= 6
-                : this.state.child >= 6
-            }
-            className="button"
-            onClick={this.addPassenger.bind(this, this.props.age)}
+            disabled={this.state.adult >= 6 || this.state.child >= 6}
+            className="stepper-input__button button"
+            onClick={this.addPassenger}
           >
             +
           </button>
         </div>
-        <p className="role">{this.props.age + info}</p>
+        <p>{this.role + info}</p>
       </div>
     );
   }
