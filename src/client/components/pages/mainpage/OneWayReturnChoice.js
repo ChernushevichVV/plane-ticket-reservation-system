@@ -1,22 +1,18 @@
+//to do:
+//1) if Return unchecked "return date" field should be disabled
+
 import React, { Component } from "react";
 
 export class OneWayReturnChoice extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      returnRadio: false
-    };
-    this.isReturnChecked = this.isReturnChecked.bind(this);
-  }
-
+  state = {
+    returnRadio: false
+  };
   //works in wrong way
-  isReturnChecked() {
+  handleReturnChecked = () => {
     this.setState((prevState, props) => ({
       returnRadio: !prevState.returnRadio
     }));
-    //alert(this.state.returnRadio);
-  }
+  };
 
   render() {
     return (
@@ -36,7 +32,7 @@ export class OneWayReturnChoice extends Component {
           type="radio"
           name="ways"
           value="return"
-          onChange={this.isReturnChecked}
+          onChange={this.handleReturnChecked}
         />
         <label htmlFor="Return">Return</label>
       </div>

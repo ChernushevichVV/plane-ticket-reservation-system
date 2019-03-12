@@ -6,35 +6,30 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export class DatePickerBlock extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      startDate1: "",
-      startDate2: "",
-      disableReturn: false
-    };
-    this.handleChange1 = this.handleChange1.bind(this);
-    this.handleChange2 = this.handleChange2.bind(this);
-  }
+  state = {
+    startDate1: "",
+    startDate2: "",
+    disableReturn: false
+  };
 
   //solve the case with dates later
-  handleChange1(date) {
+  handleDepart = date => {
     this.setState({
       startDate1:
         +this.state.startDate2 <= +this.state.startDate1
           ? date
           : this.state.startDate2
     });
-  }
+  };
 
-  handleChange2(date) {
+  handleReturn = date => {
     this.setState({
       startDate2:
         +this.state.startDate1 <= +this.state.startDate2
           ? date
           : this.state.startDate1
     });
-  }
+  };
 
   handleSelect(date) {
     alert(date);
@@ -45,7 +40,7 @@ export class DatePickerBlock extends Component {
       <div className="content date-picker">
         <div className="date-picker__input">
           <DatePicker
-            onChange={this.handleChange1}
+            onChange={this.handleDepart}
             onSelect={this.handleSelect}
             monthsShown={2}
             selected={this.state.startDate1}
@@ -54,7 +49,7 @@ export class DatePickerBlock extends Component {
         </div>
         <div className="date-picker__input">
           <DatePicker
-            onChange={this.handleChange2}
+            onChange={this.handleReturn}
             onSelect={this.handleSelect}
             monthsShown={2}
             selected={this.state.startDate2}

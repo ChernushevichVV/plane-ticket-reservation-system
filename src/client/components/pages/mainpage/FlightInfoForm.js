@@ -15,7 +15,7 @@ export class FlightInfoForm extends Component {
           <Stepper age="adult" />
           <Stepper age="child" />
         </div>
-        <button className="search-button">Search</button>
+        <button className="search-button button">Search</button>
       </div>
     );
   }
