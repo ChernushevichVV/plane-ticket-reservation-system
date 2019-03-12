@@ -5,15 +5,25 @@ import DestinationBlock from "./DestinationBlock";
 import Stepper from "./Stepper";
 
 export class FlightInfoForm extends Component {
+  state = {
+    isReturnChecked: true
+  };
+
+  changeState = () => {
+    this.setState((state, props) => {
+      return { isReturnChecked: !state.isReturnChecked };
+    });
+  };
+
   render() {
     return (
       <div className="flight-info">
-        <OneWayReturnChoice />
+        <OneWayReturnChoice onWaysChanged={this.changeState} />
         <DestinationBlock />
-        <DatePickerBlock />
+        <DatePickerBlock isReturnChecked={this.state.isReturnChecked} />
         <div className="content">
-          <Stepper age="adult" />
-          <Stepper age="child" />
+          <Stepper label="Adult(18+)" minValue={1} />
+          <Stepper label="Child(0-18)" minValue={0} />
         </div>
         <button className="search-button button">Search</button>
       </div>

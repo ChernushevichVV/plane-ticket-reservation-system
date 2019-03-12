@@ -5,13 +5,14 @@ import React, { Component } from "react";
 
 export class OneWayReturnChoice extends Component {
   state = {
-    returnRadio: false
+    value: "return"
   };
-  //works in wrong way
-  handleReturnChecked = () => {
-    this.setState((prevState, props) => ({
-      returnRadio: !prevState.returnRadio
-    }));
+
+  handleWaysChanged = e => {
+    this.setState({
+      value: e.target.value
+    });
+    this.props.onWaysChanged("");
   };
 
   render() {
@@ -19,20 +20,22 @@ export class OneWayReturnChoice extends Component {
       <div className="content oneway-return">
         <input
           id="OneWay"
-          className="oneway-return__input"
+          className="oneway-return__radio"
           type="radio"
           name="ways"
           value="oneway"
-          checked
+          onChange={this.handleWaysChanged}
+          checked={this.state.value === "oneway"}
         />
         <label htmlFor="OneWay">One Way</label> &emsp;
         <input
           id="Return"
-          className="oneway-return__input"
+          className="oneway-return__radio"
           type="radio"
           name="ways"
           value="return"
-          onChange={this.handleReturnChecked}
+          onChange={this.handleWaysChanged}
+          checked={this.state.value === "return"}
         />
         <label htmlFor="Return">Return</label>
       </div>

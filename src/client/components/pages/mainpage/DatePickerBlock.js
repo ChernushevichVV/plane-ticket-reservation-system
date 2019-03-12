@@ -8,8 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 export class DatePickerBlock extends Component {
   state = {
     startDate1: "",
-    startDate2: "",
-    disableReturn: false
+    startDate2: ""
   };
 
   //solve the case with dates later
@@ -54,7 +53,7 @@ export class DatePickerBlock extends Component {
             monthsShown={2}
             selected={this.state.startDate2}
             placeholderText="Return date"
-            disabled={this.state.disableReturn}
+            disabled={!this.props.isReturnChecked}
           />
         </div>
       </div>
