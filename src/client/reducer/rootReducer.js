@@ -1,14 +1,14 @@
 import { actionTypes } from "../action/actionTypes";
 
 const initialState = {
-  flightSearchOption: "return"
+  tripType: "return"
 };
 
 function rootReducer(state = initialState, action) {
-  if (action.type === actionTypes.FLIGHT_SEARCH_OPTION_CHANGE) {
+  if (action.type === actionTypes.TRIP_TYPE_OPTION_CHANGE) {
     return {
       ...state,
-      flightSearchOption: action.payload
+      tripType: action.payload
     };
   }
   return state;

@@ -7,9 +7,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-const mapStateToProps = state => {
-  return { flightSearchOption: state.flightSearchOption };
-};
 export class ConnectedDatePickerBlock extends Component {
   state = {
     startDateDepart: new Date(),
@@ -48,7 +45,7 @@ export class ConnectedDatePickerBlock extends Component {
               onChange={this.handleReturn}
               monthsShown={2}
               selected={this.state.startDateReturn}
-              disabled={this.props.flightSearchOption === "oneway"}
+              disabled={this.props.tripType === "oneway"}
             />
           </label>
         </div>
@@ -57,7 +54,11 @@ export class ConnectedDatePickerBlock extends Component {
   }
 }
 
-ConnectedDatePickerBlock.propTypes = { flightSearchOption: PropTypes.string };
+const mapStateToProps = state => {
+  return { tripType: state.tripType };
+};
+
+ConnectedDatePickerBlock.propTypes = { tripType: PropTypes.string };
 
 const DatePickerBlock = connect(mapStateToProps)(ConnectedDatePickerBlock);
 

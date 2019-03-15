@@ -1,28 +1,16 @@
 //to do:
-//1) if Return unchecked "return date" field should be disabled
+//1)
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { changeFlightSearchOption } from "../../../action/index";
-
-const mapStateToProps = state => {
-  return { flightSearchOption: state.flightSearchOption };
-};
-
-function mapDispatchToProps(dispatch) {
-  return {
-    changeFlightSearchOption: newOption => {
-      dispatch(changeFlightSearchOption(newOption));
-    }
-  };
-}
+import { changeTripType } from "../../../action/index";
+import PropTypes from "prop-types";
 
 class ConnectedChoice extends Component {
-  //= ({ flightSearchOption }) => (
 
   handleChange = e => {
     const value = e.target.value;
-    this.props.changeFlightSearchOption(value);
+    this.props.changeTripType(value);
   };
 
   render() {
@@ -35,7 +23,7 @@ class ConnectedChoice extends Component {
           name="ways"
           value="oneway"
           onChange={this.handleChange}
-          checked={this.props.flightSearchOption === "oneway"}
+          checked={this.props.tripType === "oneway"}
         />
         <label htmlFor="OneWay">One Way</label> &emsp;
         <input
@@ -45,13 +33,30 @@ class ConnectedChoice extends Component {
           name="ways"
           value="return"
           onChange={this.handleChange}
-          checked={this.props.flightSearchOption === "return"}
+          checked={this.props.tripType === "return"}
         />
         <label htmlFor="Return">Return</label>
       </div>
     );
   }
 }
+
+ConnectedChoice.propTypes = {
+  tripType: PropTypes.string,
+  changeTripType: PropTypes.func
+};
+
+const mapStateToProps = state => {
+  return { tripType: state.tripType };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    changeTripType: newOption => {
+      dispatch(changeTripType(newOption));
+    }
+  };
+};
 
 const OneWayReturnChoice = connect(
   mapStateToProps,

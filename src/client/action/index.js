@@ -1,5 +1,5 @@
 import { actionTypes } from "./actionTypes";
 
-export function changeFlightSearchOption(payload) {
-  return { type: actionTypes.FLIGHT_SEARCH_OPTION_CHANGE, payload };
+export function changeTripType(payload) {
+  return { type: actionTypes.TRIP_TYPE_OPTION_CHANGE, payload };
 }
