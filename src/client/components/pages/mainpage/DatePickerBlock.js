@@ -1,64 +1,64 @@
 //to do:
-//1) add style for disabled input
+//1)
 
 import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-export class DatePickerBlock extends Component {
+const mapStateToProps = state => {
+  return { flightSearchOption: state.flightSearchOption };
+};
+export class ConnectedDatePickerBlock extends Component {
   state = {
-    startDate1: "",
-    startDate2: ""
+    startDateDepart: new Date(),
+    startDateReturn: new Date()
   };
 
-  //solve the case with dates later
   handleDepart = date => {
     this.setState({
-      startDate1:
-        +this.state.startDate2 <= +this.state.startDate1
-          ? date
-          : this.state.startDate2
+      startDateDepart: date
     });
   };
 
   handleReturn = date => {
     this.setState({
-      startDate2:
-        +this.state.startDate1 <= +this.state.startDate2
-          ? date
-          : this.state.startDate1
+      startDateReturn: date
     });
   };
-
-  handleSelect(date) {
-    alert(date);
-  }
 
   render() {
     return (
       <div className="content date-picker">
         <div className="date-picker__input">
-          <DatePicker
-            onChange={this.handleDepart}
-            onSelect={this.handleSelect}
-            monthsShown={2}
-            selected={this.state.startDate1}
-            placeholderText="Departure date"
-          />
+          <label className="date-picker__label">
+            <h4>Departure date</h4>
+            <DatePicker
+              onChange={this.handleDepart}
+              monthsShown={2}
+              selected={this.state.startDateDepart}
+            />
+          </label>
         </div>
         <div className="date-picker__input">
-          <DatePicker
-            onChange={this.handleReturn}
-            onSelect={this.handleSelect}
-            monthsShown={2}
-            selected={this.state.startDate2}
-            placeholderText="Return date"
-            disabled={!this.props.isReturnChecked}
-          />
+          <label className="date-picker__label">
+            <h4>Return date</h4>
+            <DatePicker
+              onChange={this.handleReturn}
+              monthsShown={2}
+              selected={this.state.startDateReturn}
+              disabled={this.props.flightSearchOption === "oneway"}
+            />
+          </label>
         </div>
       </div>
     );
   }
 }
+
+ConnectedDatePickerBlock.propTypes = { flightSearchOption: PropTypes.string };
+
+const DatePickerBlock = connect(mapStateToProps)(ConnectedDatePickerBlock);
 
 export default DatePickerBlock;
