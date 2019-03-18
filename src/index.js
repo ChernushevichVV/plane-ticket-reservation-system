@@ -6,13 +6,10 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import store from "./client/store";
-import { BrowserRouter, Route } from "react-router-dom";
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <Route path="/" component={App} />
-    </BrowserRouter>
+    <App />
   </Provider>,
   document.getElementById("root")
 );
