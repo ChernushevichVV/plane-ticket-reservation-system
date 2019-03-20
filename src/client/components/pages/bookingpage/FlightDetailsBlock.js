@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FlightDetails from "./FlightDetails";
 import RouteDetails from "./RouteDetails";
+import TicketPicker from "./TicketPicker";
 
 export class FlightDetailsBlock extends Component {
   render() {
@@ -9,6 +10,7 @@ export class FlightDetailsBlock extends Component {
         <FlightDetails time="10:00" airport="Minsk" />
         <RouteDetails time="1h" type="direct" />
         <FlightDetails time="11:00" airport="Kiev" />
+        <TicketPicker price="50" currency="$" buttonLabel="Continue" />
       </div>
     );
   }
