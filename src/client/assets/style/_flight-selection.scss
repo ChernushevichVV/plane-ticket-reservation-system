@@ -1,45 +1,67 @@
 .flight-picker {
-  //position: relative;
+  border: 1px solid black;
   margin: 3em auto;
   height: 40%;
   width: 60%;
-  border: 1px solid black;
+
   background-color: #ecf1fa;
   border-radius: 10px;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
+  justify-content: flex-end;
   //align-content: flex-start;
+
+  &__cost-button-block {
+    //border: 1px solid black;
+    position: relative;
+    //font-size: 1em;
+    display: flex;
+    align-items: center;
+    height: 3em;
+    padding: 1em;
+    //margin-left: 70%;
+    //margin-right: auto;
+    width: 15em;
+  }
+
+  &__button {
+    margin: 10px;
+    padding: 5px;
+    background-color: rgb(240, 231, 105);
+  }
 }
 
-.flight-details-block {
-  display: flex;
-  justify-content: space-around;
+.total-cost {
   //border: 1px solid black;
-  width: 100%;
+  width: 8em;
 }
 
-.flight-details {
-  //border: 1px solid black;
+.date-carousel {
+  border: 2px solid black;
+  position: relative;
+  width: 90%;
+  height: 5em;
+  margin: auto;
 
-  &__time {
-    font-weight: bold;
-    font-size: 1.5em;
-  }
-  &__airport {
-    font-size: 1em;
+  &__placeholder {
+    border: 1px solid black;
+    height: 90%;
   }
 }
-
-.route-details {
-  //border: 1px solid black;
-
-  &__time {
-    font-weight: 500;
-  }
-  &__type {
-    font-size: 0.8em;
-    font-weight: bold;
-  }
+.item-carousel {
+  border: 1px solid black;
+  position: relative;
+  height: 90%;
+}
+.date-item {
+  cursor: pointer;
+  border: 1px solid black;
+  //position: relative;
+  //height: 100%;
+  //width: 80%;
+  margin: 0.5em;
+  font-size: 30px;
+  text-align: center;
 }
