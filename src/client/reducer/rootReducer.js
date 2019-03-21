@@ -1,7 +1,11 @@
 import { actionTypes } from "../action/actionTypes";
 
 const initialState = {
-  tripType: "return"
+  tripType: "return",
+  returnDate: new Date(),
+  departureDate: new Date(),
+  outboundAirport: "",
+  inboundAirport: ""
 };
 
 function rootReducer(state = initialState, action) {
