@@ -1,28 +1,6 @@
-.sign-block {
-  margin: 10px 50px 0 10px;
-  float: right;
-  width: 30%;
-  height: 80%;
-  display: flex;
-  align-items: center;
-
-  &__button {
-    display: relative;
-    margin: 10px;
-    height: 90%;
-    width: 100px;
-  }
-  &__button button {
-    font-size: 1.2em;
-    height: 90%;
-    width: 100px;
-    border-radius: 5px;
-  }
-}
-
 .flight-info {
   position: relative;
-  margin: auto;
+  margin: 3em auto;
   top: 20%;
   align-items: center;
   background-color: rgba(41, 98, 202, 0.5);

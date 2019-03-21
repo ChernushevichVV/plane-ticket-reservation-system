@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import FlightDetailsBlock from "./FlightDetailsBlock";
 import DateCarousel from "./DateCarousel";
-import TotalCost from "../../misc/TotalCost";
+import TotalCost from "../../../misc/TotalCost";
+import PropTypes from "prop-types";
 
 export class FlightPicker extends Component {
   render() {
     return (
       <div className="flight-picker">
-        <DateCarousel />
+        <DateCarousel date={this.props.date} />
         {/* the nubmer of these componenets == nubmer of flights */}
         <FlightDetailsBlock />
         <FlightDetailsBlock />
