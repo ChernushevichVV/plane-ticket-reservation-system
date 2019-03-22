@@ -10,8 +10,14 @@ export class FlightPicker extends Component {
       <div className="flight-picker">
         <DateCarousel date={this.props.date} />
         {/* the nubmer of these componenets == nubmer of flights */}
-        <FlightDetailsBlock />
-        <FlightDetailsBlock />
+        <FlightDetailsBlock
+          from={this.props.outbound}
+          to={this.props.inbound}
+        />
+        <FlightDetailsBlock
+          from={this.props.outbound}
+          to={this.props.inbound}
+        />
 
         <div className="flight-picker__cost-button-block">
           <TotalCost cost="100$" />

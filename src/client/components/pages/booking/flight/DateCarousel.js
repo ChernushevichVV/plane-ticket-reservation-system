@@ -5,11 +5,11 @@ import DateItem from "./DateItem";
 export default class DateCarousel extends Component {
   state = {
     children: [
-      <DateItem key={1} price="50$" />,
-      <DateItem />,
-      <DateItem key={3} price="50$" />,
-      <DateItem />,
-      <DateItem />
+      <DateItem key={1} />,
+      <DateItem key={2} />,
+      <DateItem key={3} />,
+      <DateItem key={4} />,
+      <DateItem key={5} />
     ],
     activeItemIndex: 2
   };
@@ -32,9 +32,7 @@ export default class DateCarousel extends Component {
           showSlither={true}
           firstAndLastGutter={true}
           freeScrolling={false}
-          placeholderItem={
-            <div className="date-carousel__placeholder">hmmm</div>
-          }
+          placeholderItem={<div className="date-carousel__placeholder" />}
           // Active item configurations
           requestToChangeActive={this.changeActiveItem}
           activeItemIndex={this.state.activeItemIndex}

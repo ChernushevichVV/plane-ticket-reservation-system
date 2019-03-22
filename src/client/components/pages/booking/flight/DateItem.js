@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const DateItem = props => {
+const DateItem = ({ date }) => {
   return (
     <div className="date-item">
-      <a>smt</a>
+      <a>date{date}</a>
     </div>
   );
 };

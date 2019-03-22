@@ -8,10 +8,15 @@ const ConnectedFlightPicker = props => {
     <>
       <FlightPicker
         date={props.departureDate}
-        airport={props.outboundAirport}
+        outbound={props.outboundAirport}
+        inbound={props.inboundAirport}
       />
       {props.tripType === "return" ? (
-        <FlightPicker date={props.returnDate} airport={props.inboundAirport} />
+        <FlightPicker
+          date={props.returnDate}
+          inbound={props.outboundAirport}
+          outbound={props.inboundAirport}
+        />
       ) : (
         ""
       )}

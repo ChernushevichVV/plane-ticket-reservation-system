@@ -1,7 +1,7 @@
 .flight-details-block {
   display: flex;
   justify-content: space-around;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   width: 100%;
 }
 
@@ -37,42 +37,6 @@
     display: block;
     margin: 5px auto;
     padding: 5px;
-    border-radius: 5px;
-  }
-}
-
-.ticket-type-picker-modal {
-  position: relative;
-  top: 10em;
-  display: flex;
-  justify-content: center;
-  border: 1px solid black;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 30px;
-  z-index: 100;
-}
-
-.ticket-type-picker-backdrop {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  //top: 10em;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 50px;
-}
-
-.ticket-type {
-  border: 1px solid black;
-  margin: 1em;
-
-  &__button {
-    display: block;
-    margin: 5px auto;
-    padding: 5px;
-    border-radius: 5px;
+    border-radius: 4px;
   }
 }
