@@ -1,0 +1,64 @@
+.flight-picker {
+  //border: 1px solid black;
+  margin: 3em auto;
+  min-height: 40%;
+  width: 60%;
+
+  background-color: #ecf1fa;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  &__cost-button-block {
+    //border: 1px solid black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 3em;
+    padding: 1em;
+    width: 15em;
+  }
+
+  &__button {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: rgb(240, 231, 105);
+  }
+}
+
+.total-cost {
+  //border: 1px solid black;
+  width: 8em;
+}
+
+.date-carousel {
+  border-bottom: 1px solid rgb(66, 61, 61);
+  // border-radius: 3px;
+
+  position: relative;
+  width: 95%;
+  height: 3em;
+  margin: auto;
+  font-size: 1.5em;
+
+  &__placeholder {
+    border: 1px solid black;
+    height: 90%;
+  }
+}
+.item-carousel {
+  border: 1px solid black;
+  position: relative;
+  height: 90%;
+}
+.date-item {
+  cursor: pointer;
+  border: 1px solid black;
+  margin: 0.5em;
+  font-size: 1.4em;
+  text-align: center;
+}

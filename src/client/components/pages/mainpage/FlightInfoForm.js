@@ -3,6 +3,7 @@ import DatePickerBlock from "./DatePickerBlock";
 import OneWayReturnChoice from "./OneWayReturnChoice";
 import DestinationBlock from "./DestinationBlock";
 import Stepper from "./Stepper";
+import { Link } from "react-router-dom";
 
 export class FlightInfoForm extends Component {
   render() {
@@ -15,7 +16,11 @@ export class FlightInfoForm extends Component {
           <Stepper label="Adult(18+)" minValue={1} />
           <Stepper label="Child(0-18)" minValue={0} />
         </div>
-        <button className="search-button button">Search</button>
+        <button className="search-button button">
+          <Link to="/booking" className="search-button__link">
+            Search
+          </Link>
+        </button>
       </div>
     );
   }

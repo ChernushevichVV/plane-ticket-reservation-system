@@ -1,30 +1,8 @@
-.sign-block {
-  margin: 10px 50px 0 10px;
-  float: right;
-  width: 30%;
-  height: 80%;
-  display: flex;
-  align-items: center;
-
-  &__button {
-    display: relative;
-    margin: 10px;
-    height: 90%;
-    width: 100px;
-  }
-  &__button button {
-    font-size: 1.2em;
-    height: 90%;
-    width: 100px;
-    border-radius: 5px;
-  }
-}
-
 .flight-info {
   position: relative;
+  margin: 3em auto;
   top: 20%;
   align-items: center;
-  margin: auto;
   background-color: rgba(41, 98, 202, 0.5);
   height: 50%;
   width: 50%;
@@ -98,6 +76,17 @@
   height: 2.4em;
   width: 8em;
   border-radius: 5px;
-  color: #ffffff;
-  background-color: rgb(71, 192, 71);
+  //color: #ffffff;
+  background-color: rgb(240, 231, 105);
+
+  &__link {
+    display: block;
+    text-align: center;
+    line-height: 2.2em;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: rgb(41, 98, 202);
+    text-decoration: none;
+  }
 }
