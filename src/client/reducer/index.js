@@ -1,6 +1,5 @@
-import { combineReducers } from "redux";
-import rootReducer from "./rootReducer";
+export { default as tripType } from "./tripType-reducer";
 
-export default combineReducers({
-  rootReducer
-});
+export { default as departureAirport } from "./departureAirport-reducer";
+
+export { default as destinationAirport } from "./destinationAirport-reducer";
