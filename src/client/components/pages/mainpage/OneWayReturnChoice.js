@@ -7,7 +7,6 @@ import { changeTripType } from "../../../action/index";
 import PropTypes from "prop-types";
 
 class ConnectedChoice extends Component {
-
   handleChange = e => {
     const value = e.target.value;
     this.props.changeTripType(value);

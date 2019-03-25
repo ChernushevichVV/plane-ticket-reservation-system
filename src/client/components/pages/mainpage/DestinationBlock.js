@@ -1,7 +1,38 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { changeDepartureAirport } from "../../../action/index";
+import { changeDestinationAirport } from "../../../action/index";
 
-export class DestinationBlock extends Component {
+class ConnectedDestinationBlock extends Component {
+  handleChangeDeparture = e => {
+    const value = e.target.value;
+    this.props.changeDepartureAirport(value);
+  };
+
+  handleChangeDestination = e => {
+    const value = e.target.value;
+    this.props.changeDestinationAirport(value);
+  };
+
   render() {
+    const departureAirports = [
+      "Minsk",
+      "Moscow",
+      "Kiev",
+      "Warshaw",
+      "Paris",
+      "Bremen"
+    ];
+    const destinationAirports = [
+      "Moscow",
+      "Kiev",
+      "Berlin",
+      "London",
+      "Prague",
+      "Helsinki"
+    ];
+
     return (
       <div className="content destination-block">
         <div className="destination-block__input">
@@ -10,14 +41,19 @@ export class DestinationBlock extends Component {
             <br />
             <input
               type="text"
-              name="destination"
+              name="departure"
               placeholder="From"
               required
-              list="destinations"
+              list="departure"
+              onChange={this.handleChangeDeparture}
             />
           </label>
-          <datalist id="destinations">
-            <option value="Airport" />
+          <datalist id="departure">
+            {departureAirports.map(airport => (
+              <option key={airport} value={airport}>
+                {airport}
+              </option>
+            ))}
           </datalist>
         </div>
 
@@ -30,16 +66,42 @@ export class DestinationBlock extends Component {
               name="destination"
               placeholder="To"
               required
-              list="destinations"
+              list="destination"
+              onChange={this.handleChangeDestination}
             />
           </label>
-          <datalist id="destinations">
-            <option value="Airport" />
+          <datalist id="destination">
+            {destinationAirports.map(airport => (
+              <option key={airport} value={airport}>
+                {airport}
+              </option>
+            ))}
           </datalist>
         </div>
       </div>
     );
   }
 }
+
+ConnectedDestinationBlock.propTypes = {
+  changeDepartureAirport: PropTypes.func,
+  changeDestinationAirport: PropTypes.func
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    changeDepartureAirport: airport => {
+      dispatch(changeDepartureAirport(airport));
+    },
+    changeDestinationAirport: airport => {
+      dispatch(changeDestinationAirport(airport));
+    }
+  };
+};
+
+const DestinationBlock = connect(
+  null,
+  mapDispatchToProps
+)(ConnectedDestinationBlock);
 
 export default DestinationBlock;
