@@ -5,8 +5,10 @@ import * as reducers from "./reducer/index";
 
 const initialState = {
   tripType: "return",
-  returnDate: new Date(),
-  departureDate: new Date(),
+  date: {
+    departure: new Date(),
+    return: new Date()
+  },
   airport: {
     departure: "",
     destination: ""
