@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import DatePickerBlock from "./DatePickerBlock";
 import OneWayReturnChoice from "./OneWayReturnChoice";
-import DestinationBlock from "./DestinationBlock";
+import AirportPickerBlock from "./AirportPickerBlock";
 import Stepper from "./Stepper";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ export class FlightInfoForm extends Component {
     return (
       <div className="flight-info">
         <OneWayReturnChoice />
-        <DestinationBlock />
+        <AirportPickerBlock />
         <DatePickerBlock />
         <div className="content">
           <Stepper label="Adult(18+)" minValue={1} />

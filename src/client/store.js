@@ -7,8 +7,10 @@ const initialState = {
   tripType: "return",
   returnDate: new Date(),
   departureDate: new Date(),
-  departureAirport: "",
-  destinationAirport: ""
+  airport: {
+    departure: "",
+    destination: ""
+  }
 };
 
 const store = createStore(
