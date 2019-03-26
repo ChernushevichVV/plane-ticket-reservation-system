@@ -45,6 +45,7 @@ class ConnectedDestinationBlock extends Component {
               placeholder="From"
               required
               list="departure"
+              autoComplete="off"
               onChange={this.handleChangeDeparture}
             />
           </label>
@@ -67,6 +68,7 @@ class ConnectedDestinationBlock extends Component {
               placeholder="To"
               required
               list="destination"
+              autoComplete="off"
               onChange={this.handleChangeDestination}
             />
           </label>
