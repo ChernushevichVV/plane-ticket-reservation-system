@@ -6,35 +6,32 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { changeDate } from "../../../action/index";
 
-export class ConnectedDatePickerBlock extends Component {
-  state = {
-    startDateDepart: new Date(),
-    startDateReturn: new Date()
+class ConnectedDatePickerBlock extends Component {
+  handleChangeDeparture = date => {
+    const id = "departure";
+    this.props.changeDate(date, id);
   };
-
-  handleDepart = date => {
-    this.setState({
-      startDateDepart: date
-    });
-  };
-
-  handleReturn = date => {
-    this.setState({
-      startDateReturn: date
-    });
+  handleChangeReturn = date => {
+    const id = "return";
+    this.props.changeDate(date, id);
   };
 
   render() {
+    const { departureDate, returnDate, tripType } = this.props;
+
     return (
       <div className="content date-picker">
         <div className="date-picker__input">
           <label className="date-picker__label">
             <h4>Departure date</h4>
             <DatePicker
-              onChange={this.handleDepart}
+              id="departure"
+              onChange={this.handleChangeDeparture}
               monthsShown={2}
-              selected={this.state.startDateDepart}
+              selected={departureDate}
+              placeholderText="something"
             />
           </label>
         </div>
@@ -42,10 +39,11 @@ export class ConnectedDatePickerBlock extends Component {
           <label className="date-picker__label">
             <h4>Return date</h4>
             <DatePicker
-              onChange={this.handleReturn}
+              id="return"
+              onChange={this.handleChangeReturn}
               monthsShown={2}
-              selected={this.state.startDateReturn}
-              disabled={this.props.tripType === "oneway"}
+              selected={returnDate}
+              disabled={tripType === "oneway"}
             />
           </label>
         </div>
@@ -54,12 +52,32 @@ export class ConnectedDatePickerBlock extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { tripType: state.tripType };
+ConnectedDatePickerBlock.propTypes = {
+  tripType: PropTypes.string,
+  departureDate: PropTypes.object,
+  returnDate: PropTypes.object,
+  changeDate: PropTypes.func
 };
 
-ConnectedDatePickerBlock.propTypes = { tripType: PropTypes.string };
+const mapStateToProps = state => {
+  return {
+    tripType: state.tripType,
+    departureDate: state.date.departure,
+    returnDate: state.date.return
+  };
+};
 
-const DatePickerBlock = connect(mapStateToProps)(ConnectedDatePickerBlock);
+const mapDispatchToProps = dispatch => {
+  return {
+    changeDate: (date, way) => {
+      dispatch(changeDate(date, way));
+    }
+  };
+};
+
+const DatePickerBlock = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ConnectedDatePickerBlock);
 
 export default DatePickerBlock;

@@ -9,3 +9,17 @@ export function changeAirport(payload, placeholder) {
     ? { type: actionTypes.DEPARTURE_AIRPORT_CHANGE, payload }
     : { type: actionTypes.DESTINATION_AIRPORT_CHANGE, payload };
 }
+
+export function changeDate(payload, type) {
+  return type === "departure"
+    ? { type: actionTypes.DEPARTURE_DATE_CHANGE, payload }
+    : { type: actionTypes.RETURN_DATE_CHANGE, payload };
+}
+
+export function addPassenger(payload) {
+  return { type: actionTypes.ADD_PASSENGER, payload };
+}
+
+export function deletePassenger(payload) {
+  return { type: actionTypes.DELETE_PASSENGER, payload };
+}

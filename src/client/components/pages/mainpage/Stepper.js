@@ -1,56 +1,56 @@
-//to do:
-//
+import React from "react";
+import PropTypes from "prop-types";
 
-import React, { Component } from "react";
+const Stepper = props => {
+  const {
+    id,
+    minValue,
+    maxValue,
+    label,
+    num,
+    onIncrement,
+    onDecrement
+  } = props;
 
-export class Stepper extends Component {
-  state = {
-    value: this.props.minValue
-  };
-
-  increment = () => {
-    this.setState(prevState => ({
-      value: prevState.value + 1
-    }));
-  };
-
-  decrement = () => {
-    this.setState(prevState => ({
-      value: prevState.value - 1
-    }));
-  };
-
-  render() {
-    const { minValue, label } = this.props;
-    const { value } = this.state;
-
-    return (
-      <div className="stepper-wrapper">
-        <div className="stepper-input">
-          <button
-            disabled={value <= minValue}
-            className="stepper-input__button button"
-            onClick={this.decrement}
-          >
-            -
-          </button>
-          <input
-            type="text"
-            value={value}
-            className="input stepper-input__input"
-          />
-          <button
-            disabled={value >= 6}
-            className="stepper-input__button button"
-            onClick={this.increment}
-          >
-            +
-          </button>
-        </div>
-        <p>{label}</p>
+  return (
+    <div className="stepper-wrapper">
+      <div className="stepper-input">
+        <button
+          disabled={num <= minValue}
+          className="stepper-input__button button"
+          onClick={onDecrement}
+          id={id}
+        >
+          -
+        </button>
+        <input
+          readOnly
+          type="text"
+          value={num}
+          className="input stepper-input__input"
+        />
+        <button
+          disabled={num >= maxValue}
+          className="stepper-input__button button"
+          onClick={onIncrement}
+          id={id}
+        >
+          +
+        </button>
       </div>
-    );
-  }
-}
+      <p>{label}</p>
+    </div>
+  );
+};
+
+Stepper.propTypes = {
+  id: PropTypes.string,
+  minValue: PropTypes.number,
+  maxValue: PropTypes.number,
+  label: PropTypes.string,
+  num: PropTypes.number,
+  onIncrement: PropTypes.func,
+  onDecrement: PropTypes.func
+};
 
 export default Stepper;
