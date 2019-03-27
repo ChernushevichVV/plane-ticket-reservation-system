@@ -15,3 +15,11 @@ export function changeDate(payload, type) {
     ? { type: actionTypes.DEPARTURE_DATE_CHANGE, payload }
     : { type: actionTypes.RETURN_DATE_CHANGE, payload };
 }
+
+export function addPassenger(payload) {
+  return { type: actionTypes.ADD_PASSENGER, payload };
+}
+
+export function deletePassenger(payload) {
+  return { type: actionTypes.DELETE_PASSENGER, payload };
+}
