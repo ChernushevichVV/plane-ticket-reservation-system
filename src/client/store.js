@@ -3,7 +3,7 @@ import { createStore, compose } from "redux";
 import { combineReducers } from "redux";
 import * as reducers from "./reducer/index";
 
-const initialState = {
+const preloadedState = {
   tripType: "return",
   date: {
     departure: new Date(),
@@ -12,12 +12,16 @@ const initialState = {
   airport: {
     departure: "",
     destination: ""
+  },
+  passenger: {
+    adult: 1,
+    child: 0
   }
 };
 
 const store = createStore(
   combineReducers(reducers),
-  initialState,
+  preloadedState,
   compose(
     //applyMiddleware(forbiddenWordsMiddleware),
     window.devToolsExtension ? window.devToolsExtension() : f => f
