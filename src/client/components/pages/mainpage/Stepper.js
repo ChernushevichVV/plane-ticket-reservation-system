@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 const Stepper = props => {
@@ -23,7 +23,12 @@ const Stepper = props => {
         >
           -
         </button>
-        <input type="text" value={num} className="input stepper-input__input" />
+        <input
+          readOnly
+          type="text"
+          value={num}
+          className="input stepper-input__input"
+        />
         <button
           disabled={num >= maxValue}
           className="stepper-input__button button"
