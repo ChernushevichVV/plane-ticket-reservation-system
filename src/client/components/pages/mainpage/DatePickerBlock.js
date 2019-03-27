@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { changeDate } from "../../../action/index";
 
-export class ConnectedDatePickerBlock extends Component {
+class ConnectedDatePickerBlock extends Component {
   handleChangeDeparture = date => {
     const id = "departure";
     this.props.changeDate(date, id);
@@ -19,6 +19,8 @@ export class ConnectedDatePickerBlock extends Component {
   };
 
   render() {
+    const { departureDate, returnDate, tripType } = this.props;
+
     return (
       <div className="content date-picker">
         <div className="date-picker__input">
@@ -28,7 +30,7 @@ export class ConnectedDatePickerBlock extends Component {
               id="departure"
               onChange={this.handleChangeDeparture}
               monthsShown={2}
-              selected={this.props.departureDate}
+              selected={departureDate}
               placeholderText="something"
             />
           </label>
@@ -40,8 +42,8 @@ export class ConnectedDatePickerBlock extends Component {
               id="return"
               onChange={this.handleChangeReturn}
               monthsShown={2}
-              selected={this.props.returnDate}
-              disabled={this.props.tripType === "oneway"}
+              selected={returnDate}
+              disabled={tripType === "oneway"}
             />
           </label>
         </div>
