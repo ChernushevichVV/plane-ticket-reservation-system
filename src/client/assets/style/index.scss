@@ -4,6 +4,8 @@
   padding: 0;
 }
 
+$forms-color: rgb(236, 233, 233);
+
 @import "stepper";
 
 @import "button";
@@ -23,3 +25,5 @@
 @import "ticket-details-block";
 
 @import "airport-picker-block";
+
+@import "seat-selection";

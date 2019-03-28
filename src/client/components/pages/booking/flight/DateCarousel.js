@@ -1,15 +1,28 @@
 import React, { Component } from "react";
 import ItemsCarousel from "react-items-carousel";
 import DateItem from "./DateItem";
+import PropTypes from "prop-types";
 
 export default class DateCarousel extends Component {
   state = {
     children: [
-      <DateItem key={1} />,
-      <DateItem key={2} />,
-      <DateItem key={3} />,
-      <DateItem key={4} />,
-      <DateItem key={5} />
+      <DateItem
+        key={1}
+        time={this.props.date.getTime() - 2 * 1000 * 60 * 60 * 24}
+      />,
+      <DateItem
+        key={2}
+        time={this.props.date.getTime() - 1 * 1000 * 60 * 60 * 24}
+      />,
+      <DateItem key={3} time={this.props.date.getTime()} />,
+      <DateItem
+        key={4}
+        time={this.props.date.getTime() + 1 * 1000 * 60 * 60 * 24}
+      />,
+      <DateItem
+        key={5}
+        time={this.props.date.getTime() + 2 * 1000 * 60 * 60 * 24}
+      />
     ],
     activeItemIndex: 2
   };
@@ -48,3 +61,7 @@ export default class DateCarousel extends Component {
     );
   }
 }
+
+DateCarousel.propTypes = {
+  date: PropTypes.object
+};
