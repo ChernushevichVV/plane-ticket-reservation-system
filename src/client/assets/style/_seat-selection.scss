@@ -1,0 +1,87 @@
+.seat-selection {
+  //border: 1px solid black;
+  border-radius: 5px;
+  background-color: $forms-color;
+  position: absolute;
+  margin: 0 25% 0 25%;
+  top: 20%;
+  min-width: 50%;
+  max-width: max-content;
+  min-height: 70%;
+  max-height: max-content;
+
+  display: flex;
+  align-items: center;
+}
+
+.legend {
+  border: 1px solid black;
+  min-width: 10em;
+  max-width: max-content;
+  min-height: 5em;
+  max-height: max-content;
+  margin: 1em;
+  text-align: center;
+  //display: flex;
+  // flex-direction: column;
+
+  &__span {
+    font-size: 1.1em;
+    margin: 4px;
+  }
+
+  &__seat {
+    display: flex;
+    align-items: baseline;
+    margin: 4px;
+  }
+}
+
+.plane-container {
+  border: 1px solid black;
+  min-width: 40em;
+  min-height: 40em;
+  max-width: max-content;
+}
+
+.plane {
+  border-left: 7px solid rgb(221, 217, 217);
+  border-right: 7px solid rgb(221, 217, 217);
+  background-color: aliceblue;
+  min-width: min-content;
+  min-height: 40em;
+  max-width: max-content;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+  &__row {
+    //border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+  }
+
+  &__empty-section {
+    //border: 1px solid black;
+    min-height: 30%;
+    width: 2em;
+  }
+
+  &__section {
+    //border: 1px solid black;
+    min-height: 30%;
+    min-width: min-content;
+    max-width: max-content;
+  }
+}
+
+.seat {
+  border: 1px solid black;
+  margin: 2px;
+  border-radius: 2px;
+  box-shadow: inset 0px 0px 5px 0px;
+  width: 1.5em;
+  height: 2em;
+}
