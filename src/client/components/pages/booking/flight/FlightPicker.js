@@ -18,11 +18,17 @@ export class FlightPicker extends Component {
 
         <div className="flight-picker__cost-button-block">
           <TotalCost cost="100$" />
-          <NextButton link="nextpage" />
+          <NextButton link="/booking/seat" />
         </div>
       </div>
     );
   }
 }
+
+FlightPicker.propTypes = {
+  date: PropTypes.object,
+  departure: PropTypes.string,
+  destination: PropTypes.string
+};
 
 export default FlightPicker;
