@@ -2,8 +2,8 @@
   //border: 1px solid black;
   border-radius: 5px;
   background-color: $forms-color;
-  position: absolute;
-  margin: 0 25% 0 25%;
+  position: relative;
+  margin: 1em auto;
   top: 20%;
   min-width: 50%;
   max-width: max-content;
@@ -14,8 +14,28 @@
   align-items: center;
 }
 
+.seat {
+  margin: 2px;
+  border-radius: 2px;
+  box-shadow: inset 0px 0px 4px 0px #1a1a7d;
+  width: 1.5em;
+  height: 2em;
+  background-color: #ffffff;
+
+  &_reserved {
+    background-color: #808080;
+    pointer-events: none;
+  }
+
+  &_selected {
+    background-color: #add8e6;
+  }
+}
+
 .legend {
-  border: 1px solid black;
+  //border: 1px solid black;
+  border-radius: 4px;
+  background-color: hsl(208, 100%, 97%);
   min-width: 10em;
   max-width: max-content;
   min-height: 5em;
@@ -32,56 +52,7 @@
 
   &__seat {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     margin: 4px;
   }
-}
-
-.plane-container {
-  border: 1px solid black;
-  min-width: 40em;
-  min-height: 40em;
-  max-width: max-content;
-}
-
-.plane {
-  border-left: 7px solid rgb(221, 217, 217);
-  border-right: 7px solid rgb(221, 217, 217);
-  background-color: aliceblue;
-  min-width: min-content;
-  min-height: 40em;
-  max-width: max-content;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-
-  &__row {
-    //border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    margin: 5px;
-  }
-
-  &__empty-section {
-    //border: 1px solid black;
-    min-height: 30%;
-    width: 2em;
-  }
-
-  &__section {
-    //border: 1px solid black;
-    min-height: 30%;
-    min-width: min-content;
-    max-width: max-content;
-  }
-}
-
-.seat {
-  border: 1px solid black;
-  margin: 2px;
-  border-radius: 2px;
-  box-shadow: inset 0px 0px 5px 0px;
-  width: 1.5em;
-  height: 2em;
 }
