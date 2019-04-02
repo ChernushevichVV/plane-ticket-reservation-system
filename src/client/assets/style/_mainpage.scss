@@ -13,6 +13,7 @@
   height: 5em;
   width: 100%;
   overflow: hidden;
+  border-bottom: 2px solid #aaaeb5;
 }
 
 .section {
@@ -28,8 +29,9 @@
 }
 
 .footer {
-  position: relative;
-  border: 1px solid black;
+  //position: relative;
+  //margin-top: -9px;
+  //border: 1px solid black;
   background-color: $forms-color;
   width: 100%;
   height: 20%;
