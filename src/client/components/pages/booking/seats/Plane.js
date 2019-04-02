@@ -3,7 +3,11 @@ import PropTypes from "prop-types";
 import Seat from "./Seat";
 
 class Plane extends Component {
-  //sections = [["nubmerOfRows", "numberOfSeatsInRow"], ["..."]];
+  plane = {
+    sections: [[15, 3], [16, 4], [15, 3]],
+    reserved: ["1-5-2", "0-1-1", "0-1-2", "2-10-0"],
+    business: ["1-5-2"]
+  };
 
   renderPlane = sections => {
     let arr = [];
@@ -11,25 +15,39 @@ class Plane extends Component {
       arr[i] = (
         <>
           {i !== 0 && <div className="plane__empty-section" />}
-          <div className="plane__section">{this.renderRows(sections[i])}</div>
+          <div className="plane__section">
+            {this.renderRows(sections[i], i)}
+          </div>
         </>
       );
     }
     return arr;
   };
 
-  renderRows = rowSeat => {
+  renderRows = (rowSeat, sectionId) => {
     let arr = [];
     for (let i = 0; i < rowSeat[0]; i++) {
-      arr[i] = <div className="plane__row">{this.renderSeats(rowSeat[1])}</div>;
+      arr[i] = (
+        <div className="plane__row">
+          {this.renderSeats(rowSeat[1], i, sectionId)}
+        </div>
+      );
     }
     return arr;
   };
 
-  renderSeats = seat => {
+  renderSeats = (seat, rowId, sectionId) => {
     let arr = [];
     for (let j = 0; j < seat; j++) {
-      arr[j] = <Seat key={j} />;
+      let id = `${sectionId}-${rowId}-${j}`;
+      let status = "available";
+      let type = "econom";
+
+      if (this.plane.reserved.indexOf(id) !== -1) {
+        status = "reserved";
+      }
+
+      arr[j] = <Seat key={id} id={id} status={status} type={type} />;
     }
     return arr;
   };
@@ -37,9 +55,7 @@ class Plane extends Component {
   render() {
     return (
       <div className="plane-container">
-        <div className="plane">
-          {this.renderPlane([[10, 3], [12, 4], [10, 3]])}
-        </div>
+        <div className="plane">{this.renderPlane(this.plane.sections)}</div>
       </div>
     );
   }
