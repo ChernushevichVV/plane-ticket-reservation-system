@@ -1,14 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const NextButton = props => {
+const NextButton = ({ link }) => {
   return (
-    <div>
-      <button className="next-button">Next</button>
-    </div>
+    <button className="next-button">
+      <Link to={link} className="button-link next-button__link">
+        Next
+      </Link>
+    </button>
   );
 };
 
-NextButton.propTypes = {};
+NextButton.propTypes = {
+  link: PropTypes.string
+};
 
 export default NextButton;
