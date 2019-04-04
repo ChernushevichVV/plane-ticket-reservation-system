@@ -23,3 +23,7 @@ export function addPassenger(payload) {
 export function deletePassenger(payload) {
   return { type: actionTypes.DELETE_PASSENGER, payload };
 }
+
+export function changeSeatSelection(payload) {
+  return { type: actionTypes.CHANGE_SEAT_SELECTION, payload };
+}
