@@ -1,0 +1,35 @@
+.plane-container {
+  min-width: 40em;
+  min-height: 40em;
+}
+
+.plane {
+  border-left: 7px solid rgb(221, 217, 217);
+  border-right: 7px solid rgb(221, 217, 217);
+  background-color: hsl(208, 100%, 97%);
+  min-width: min-content;
+  min-height: 40em;
+  max-width: max-content;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+  &__row {
+    //border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+  }
+
+  &__section {
+    //border: 1px solid black;
+    margin-right: 2em;
+    min-height: 30%;
+    min-width: min-content;
+    max-width: max-content;
+  }
+  &__section:last-child {
+    margin-right: 0;
+  }
+}

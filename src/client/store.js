@@ -16,7 +16,8 @@ const preloadedState = {
   passenger: {
     adult: 1,
     child: 0
-  }
+  },
+  seats: []
 };
 
 const store = createStore(

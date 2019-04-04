@@ -14,7 +14,10 @@ class FlightInfoForm extends Component {
         <DatePickerBlock />
         <StepperBlock />
         <button className="search-button button">
-          <Link to="/booking" className="search-button__link">
+          <Link
+            to="/booking/flight"
+            className="button-link search-button__link"
+          >
             Search
           </Link>
         </button>

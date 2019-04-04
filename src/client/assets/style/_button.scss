@@ -2,6 +2,31 @@
   border-radius: 2px;
 }
 
+.next-button {
+  position: relative;
+  margin: 10px;
+  height: 2em;
+  width: 4em;
+  border-radius: 4px;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: rgb(240, 231, 105);
+
+  &__link {
+    line-height: 1.9em;
+  }
+}
+
+.button-link {
+  display: block;
+  text-align: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  color: rgb(41, 98, 202);
+  text-decoration: none;
+}
+
 .button:disabled,
 .button[disabled] {
   border: 1px solid #999999;

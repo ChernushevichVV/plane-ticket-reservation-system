@@ -8,27 +8,32 @@
   top: 0;
   z-index: 999;
   font-size: 20px;
-  background-color: rgb(236, 233, 233);
+  background-color: $forms-color;
   text-align: center;
   height: 5em;
   width: 100%;
   overflow: hidden;
+  border-bottom: 3px solid #aaaeb5;
 }
 
 .section {
-  margin-top: 80px;
+  top: 5em;
+  padding-bottom: 1em;
   position: relative;
   background-image: url(../images/air-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 80%;
+  //height: 80%;
+  min-height: 80%;
+  max-height: max-content;
 }
 
 .footer {
   position: relative;
-  border: 1px solid black;
-  //background-color: rgba(252, 252, 9, 0.384);
+  top: 5em;
+  background-color: $forms-color;
+  border-top: 2px solid hsl(214, 13%, 64%);
   width: 100%;
   height: 20%;
 }

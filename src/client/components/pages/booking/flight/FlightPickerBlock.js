@@ -4,18 +4,20 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 const ConnectedFlightPicker = props => {
+  const { tripType, date, airport } = props;
+
   return (
     <>
       <FlightPicker
-        date={props.departureDate}
-        outbound={props.outboundAirport}
-        inbound={props.inboundAirport}
+        date={date.departure}
+        departure={airport.departure}
+        destination={airport.destination}
       />
-      {props.tripType === "return" && (
+      {tripType === "return" && (
         <FlightPicker
-          date={props.returnDate}
-          inbound={props.outboundAirport}
-          outbound={props.inboundAirport}
+          date={date.return}
+          departure={airport.destination}
+          destination={airport.departure}
         />
       )}
     </>
@@ -24,19 +26,15 @@ const ConnectedFlightPicker = props => {
 
 ConnectedFlightPicker.propTypes = {
   tripType: PropTypes.string,
-  returnDate: PropTypes.object,
-  departureDate: PropTypes.object,
-  outboundAirport: PropTypes.string,
-  inboundAirport: PropTypes.string
+  date: PropTypes.object,
+  airport: PropTypes.object
 };
 
 const mapStateToProps = state => {
   return {
     tripType: state.tripType,
-    returnDate: state.returnDate,
-    departureDate: state.departureDate,
-    outboundAirport: state.outboundAirport,
-    inboundAirport: state.inboundAirport
+    date: state.date,
+    airport: state.airport
   };
 };
 
