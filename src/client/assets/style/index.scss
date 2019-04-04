@@ -6,6 +6,10 @@
 
 $forms-color: rgb(241, 231, 234); //rgb(230, 219, 219);
 
+.none-pointer {
+  pointer-events: none;
+}
+
 @import "stepper";
 
 @import "button";

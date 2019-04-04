@@ -13,11 +13,12 @@
   height: 5em;
   width: 100%;
   overflow: hidden;
-  border-bottom: 2px solid #aaaeb5;
+  border-bottom: 3px solid #aaaeb5;
 }
 
 .section {
-  margin-top: 80px;
+  top: 5em;
+  padding-bottom: 1em;
   position: relative;
   background-image: url(../images/air-1.jpg);
   background-repeat: no-repeat;
@@ -29,10 +30,10 @@
 }
 
 .footer {
-  //position: relative;
-  //margin-top: -9px;
-  //border: 1px solid black;
+  position: relative;
+  top: 5em;
   background-color: $forms-color;
+  border-top: 2px solid hsl(214, 13%, 64%);
   width: 100%;
   height: 20%;
 }
