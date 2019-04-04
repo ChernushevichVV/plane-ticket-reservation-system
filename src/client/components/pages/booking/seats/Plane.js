@@ -10,7 +10,7 @@ class Plane extends Component {
         seatsInRow: 3
       },
       {
-        rows: 16,
+        rows: 19,
         seatsInRow: 4
       },
       {
@@ -30,8 +30,6 @@ class Plane extends Component {
           <div className="plane__section">
             {this.renderRows(sections[i].rows, sections[i].seatsInRow, i)}
           </div>
-          {//don't render empty-section after last section
-          i !== sections.length - 1 && <div className="plane__empty-section" />}
         </>
       );
     }

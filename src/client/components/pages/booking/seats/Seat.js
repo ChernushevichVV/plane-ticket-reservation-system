@@ -35,11 +35,10 @@ class ConnectedSeat extends Component {
   render() {
     const { id, status } = this.props;
 
-    const style = classNames({
-      seat: true,
+    const style = classNames("seat", {
       "none-pointer": status === "reserved",
-      seat_reserved: status === "reserved",
-      seat_selected: this.state.selected
+      "seat--reserved": status === "reserved",
+      "seat--selected": this.state.selected
     });
 
     return <div className={style} onClick={this.handleClick} id={id} />;

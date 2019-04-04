@@ -3,26 +3,15 @@ import ItemsCarousel from "react-items-carousel";
 import DateItem from "./DateItem";
 import PropTypes from "prop-types";
 
+const secondsInDay = 1000 * 60 * 60 * 24;
 export default class DateCarousel extends Component {
   state = {
     children: [
-      <DateItem
-        key={1}
-        time={this.props.date.getTime() - 2 * 1000 * 60 * 60 * 24}
-      />,
-      <DateItem
-        key={2}
-        time={this.props.date.getTime() - 1 * 1000 * 60 * 60 * 24}
-      />,
+      <DateItem key={1} time={this.props.date.getTime() - 2 * secondsInDay} />,
+      <DateItem key={2} time={this.props.date.getTime() - 1 * secondsInDay} />,
       <DateItem key={3} time={this.props.date.getTime()} />,
-      <DateItem
-        key={4}
-        time={this.props.date.getTime() + 1 * 1000 * 60 * 60 * 24}
-      />,
-      <DateItem
-        key={5}
-        time={this.props.date.getTime() + 2 * 1000 * 60 * 60 * 24}
-      />
+      <DateItem key={4} time={this.props.date.getTime() + 1 * secondsInDay} />,
+      <DateItem key={5} time={this.props.date.getTime() + 2 * secondsInDay} />
     ],
     activeItemIndex: 2
   };

@@ -13,12 +13,12 @@ const Legend = () => {
       </div>
       <hr />
       <div className="legend__seat">
-        <div className="seat seat_reserved none-pointer" />
+        <div className="seat seat--reserved none-pointer" />
         <span className="legend__span"> - reserved</span>
       </div>
       <hr />
       <div className="legend__seat">
-        <div className="seat seat_selected none-pointer" />
+        <div className="seat seat--selected none-pointer" />
         <span className="legend__span"> - selected</span>
       </div>
     </div>
