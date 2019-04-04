@@ -8,17 +8,17 @@ const Legend = () => {
       Seat information
       <hr />
       <div className="legend__seat">
-        <div className="seat" />
+        <div className="seat none-pointer" />
         <span className="legend__span"> - available</span>
       </div>
       <hr />
       <div className="legend__seat">
-        <div className="seat seat_reserved" />
+        <div className="seat seat_reserved none-pointer" />
         <span className="legend__span"> - reserved</span>
       </div>
       <hr />
       <div className="legend__seat">
-        <div className="seat seat_selected" />
+        <div className="seat seat_selected none-pointer" />
         <span className="legend__span"> - selected</span>
       </div>
     </div>

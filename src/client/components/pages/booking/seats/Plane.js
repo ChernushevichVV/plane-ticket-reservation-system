@@ -4,7 +4,20 @@ import Seat from "./Seat";
 
 class Plane extends Component {
   plane = {
-    sections: [[15, 3], [16, 4], [15, 3]],
+    sections: [
+      {
+        rows: 15,
+        seatsInRow: 3
+      },
+      {
+        rows: 16,
+        seatsInRow: 4
+      },
+      {
+        rows: 15,
+        seatsInRow: 3
+      }
+    ],
     reserved: ["1-5-2", "0-1-1", "0-1-2", "2-10-0"],
     business: ["1-5-2"]
   };
@@ -14,22 +27,23 @@ class Plane extends Component {
     for (let i = 0; i < sections.length; i++) {
       arr[i] = (
         <>
-          {i !== 0 && <div className="plane__empty-section" />}
           <div className="plane__section">
-            {this.renderRows(sections[i], i)}
+            {this.renderRows(sections[i].rows, sections[i].seatsInRow, i)}
           </div>
+          {//don't render empty-section after last section
+          i !== sections.length - 1 && <div className="plane__empty-section" />}
         </>
       );
     }
     return arr;
   };
 
-  renderRows = (rowSeat, sectionId) => {
+  renderRows = (rows, seatInRow, sectionId) => {
     let arr = [];
-    for (let i = 0; i < rowSeat[0]; i++) {
+    for (let i = 0; i < rows; i++) {
       arr[i] = (
         <div className="plane__row">
-          {this.renderSeats(rowSeat[1], i, sectionId)}
+          {this.renderSeats(seatInRow, i, sectionId)}
         </div>
       );
     }
