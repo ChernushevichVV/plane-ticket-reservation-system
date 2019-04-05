@@ -17,6 +17,21 @@
   }
 }
 
+.close-button {
+  position: absolute;
+  right: 10px;
+  top: -10px;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+
+  &:hover,
+  &f:focus {
+    color: red;
+    cursor: pointer;
+  }
+}
+
 .button-link {
   display: block;
   text-align: center;
