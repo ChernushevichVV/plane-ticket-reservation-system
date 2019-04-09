@@ -5,9 +5,39 @@
 }
 
 $forms-color: rgb(241, 231, 234); //rgb(230, 219, 219);
+//$forms-color: #f7fff7;
 
 .none-pointer {
   pointer-events: none;
+}
+
+.display-none {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 10em;
+}
+
+.animation {
+  animation: animatezoom 0.4s;
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 @import "stepper";
@@ -35,3 +65,9 @@ $forms-color: rgb(241, 231, 234); //rgb(230, 219, 219);
 @import "date-carousel";
 
 @import "plane";
+
+@import "signing";
+
+@import "user";
+
+@import "order";
