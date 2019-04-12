@@ -2,7 +2,8 @@
   margin: 0 auto;
   padding-top: 1em;
   padding-bottom: 1px;
-  background-color: rgba(196, 219, 218, 0.856);
+  //background-color: rgba(196, 219, 218, 0.856);
+  background: linear-gradient(to top, #011972 -19%, #2989d8 67%, #7db9e8 87%);
 
   &__list {
     list-style-type: none;
