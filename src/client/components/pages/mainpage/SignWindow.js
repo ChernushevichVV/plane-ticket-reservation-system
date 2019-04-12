@@ -3,10 +3,77 @@ import classNames from "classnames";
 import CloseButton from "../../misc/CloseButton";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { loginUser } from "../../../action/authentication";
+import { withRouter } from "react-router-dom";
 
-export default class SignWindow extends Component {
+class SignWindow extends Component {
+  state = {
+    name: "",
+    password: ""
+  };
+
+  handleInputChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const user = {
+      name: this.state.name,
+      password: this.state.password
+    };
+    console.log(user);
+    this.props.loginUser(user);
+  };
+
+  componentDidMount() {
+    console.log("did mount");
+
+    console.log(this.props.auth);
+    // if (this.props.auth.isAuthenticated) {
+    //   this.props.history.push("/user");
+    // }
+  }
+
+  // shouldComponentUpdate(nextProps) {
+  //   console.log("should");
+
+  //   if (nextProps.auth.isAuthenticated) {
+  //     //this.props.history.push("/user");
+  //     //alert("wohoo, you've been logged in!");
+  //     return true;
+  //   }
+  //   return false;
+  // }
+
+  componentDidUpdate() {
+    console.log("update");
+    if (this.props.auth.isAuthenticated) {
+      this.props.onClick();
+      this.props.history.push("/user");
+    }
+  }
+
+  // componentWillReceiveProps(nextProps) {
+  //   console.log("props");
+
+  //   if (nextProps.auth.isAuthenticated) {
+  //     this.props.history.push("/user");
+  //     //alert("wohoo, you've been logged in!");
+  //   }
+  //   // if (nextProps.errors) {
+  //   //   this.setState({
+  //   //     errors: nextProps.errors
+  //   //   });
+  //   //}
+  // }
+
   render() {
     const { show, onClick, title, buttonLabel, nickPlaceholder } = this.props;
+    // const { isAuthenticated, user } = this.props.auth;
 
     const style = classNames({
       "display-none": !show,
@@ -25,8 +92,9 @@ export default class SignWindow extends Component {
               className="modal-content__input"
               type="text"
               placeholder={nickPlaceholder}
-              name="uname"
-              autoComplete="off"
+              name="name"
+              // autoComplete="off"
+              onChange={this.handleInputChange}
               required
             />
 
@@ -36,17 +104,19 @@ export default class SignWindow extends Component {
               placeholder="Password"
               //pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-              name="psw"
+              name="password"
+              onChange={this.handleInputChange}
               required
             />
             <button
-              onClick={onClick}
+              onClick={this.handleSubmit}
               className="button modal-content__button"
               type="submit"
             >
-              <Link to="/user" className="button-link modal-content__link">
+              {buttonLabel}
+              {/* <Link to="/user" className="button-link modal-content__link">
                 {buttonLabel}
-              </Link>
+              </Link> */}
             </button>
             <label>
               <input type="checkbox" name="remember" /> Remember me
@@ -60,5 +130,18 @@ export default class SignWindow extends Component {
 
 SignWindow.propTypes = {
   show: PropTypes.bool,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  loginUser: PropTypes.func.isRequired,
+  // logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
 };
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(withRouter(SignWindow));
+//export default SignWindow;
