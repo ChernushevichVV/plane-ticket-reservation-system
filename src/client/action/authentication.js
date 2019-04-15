@@ -3,7 +3,7 @@ import { actionTypes } from "./actionTypes";
 import setAuthToken from "../setAuthToken";
 import jwt_decode from "jwt-decode";
 
-export const loginUser = user => dispatch => {
+export const loginUser = (user,history) => dispatch => {
   axios
     .post("/api/users/login", user)
     .then(res => {
@@ -16,6 +16,7 @@ export const loginUser = user => dispatch => {
       console.log(decoded);
 
       dispatch(setCurrentUser(decoded));
+      history.push("/user");
     })
     .catch(err => {
       dispatch({

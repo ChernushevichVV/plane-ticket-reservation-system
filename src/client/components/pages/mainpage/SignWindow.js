@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import classNames from "classnames";
 import CloseButton from "../../misc/CloseButton";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { loginUser } from "../../../action/authentication";
 import { withRouter } from "react-router-dom";
@@ -10,7 +9,8 @@ import { withRouter } from "react-router-dom";
 class SignWindow extends Component {
   state = {
     name: "",
-    password: ""
+    password: "",
+    errors: {}
   };
 
   handleInputChange = e => {
@@ -25,44 +25,24 @@ class SignWindow extends Component {
       name: this.state.name,
       password: this.state.password
     };
-    console.log(user);
-    this.props.loginUser(user);
+    this.props.loginUser(user, this.props.history);
+    console.log(this.props.history.location);
   };
 
   componentDidMount() {
     console.log("did mount");
 
     console.log(this.props.auth);
-    // if (this.props.auth.isAuthenticated) {
-    //   this.props.history.push("/user");
-    // }
-  }
-
-  // shouldComponentUpdate(nextProps) {
-  //   console.log("should");
-
-  //   if (nextProps.auth.isAuthenticated) {
-  //     //this.props.history.push("/user");
-  //     //alert("wohoo, you've been logged in!");
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  componentDidUpdate() {
-    console.log("update");
     if (this.props.auth.isAuthenticated) {
-      this.props.onClick();
       this.props.history.push("/user");
     }
   }
 
   // componentWillReceiveProps(nextProps) {
-  //   console.log("props");
-
   //   if (nextProps.auth.isAuthenticated) {
+  //     console.log("props");
   //     this.props.history.push("/user");
-  //     //alert("wohoo, you've been logged in!");
+  //     this.props.onClick();
   //   }
   //   // if (nextProps.errors) {
   //   //   this.setState({
@@ -114,9 +94,6 @@ class SignWindow extends Component {
               type="submit"
             >
               {buttonLabel}
-              {/* <Link to="/user" className="button-link modal-content__link">
-                {buttonLabel}
-              </Link> */}
             </button>
             <label>
               <input type="checkbox" name="remember" /> Remember me

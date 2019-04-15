@@ -23,6 +23,7 @@ router.post("/login", (req, res) => {
           id: user.id,
           name: user.name
         };
+
         jwt.sign(
           payload,
           "secret",
@@ -39,6 +40,7 @@ router.post("/login", (req, res) => {
             }
           }
         );
+        console.log("great!");
       } else {
         return res.status(400).json("Incorrect Password");
       }
