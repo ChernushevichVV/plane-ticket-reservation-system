@@ -3,25 +3,20 @@ import DatePickerBlock from "./DatePickerBlock";
 import OneWayReturnChoice from "./OneWayReturnChoice";
 import AirportPickerBlock from "./AirportPickerBlock";
 import StepperBlock from "./StepperBlock";
-import { Link } from "react-router-dom";
+import LinkContainer from "../../misc/LinkContainer";
 
 class FlightInfoForm extends Component {
   render() {
     return (
-      <div className="flight-info">
+      <form className="flight-info">
         <OneWayReturnChoice />
         <AirportPickerBlock />
         <DatePickerBlock />
         <StepperBlock />
-        <button className="search-button button">
-          <Link
-            to="/booking/flight"
-            className="button-link search-button__link"
-          >
-            Search
-          </Link>
+        <button className="button search-button" type="submit">
+          <LinkContainer link="/booking/flight" label="Search" />
         </button>
-      </div>
+      </form>
     );
   }
 }

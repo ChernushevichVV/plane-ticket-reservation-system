@@ -47,21 +47,3 @@
     border-radius: 3px;
   }
 }
-
-.search-button {
-  position: relative;
-  bottom: 3em;
-  right: 8em;
-  float: right;
-  font-size: 1.2em;
-  font-weight: 700;
-  height: 2.4em;
-  width: 8em;
-  border-radius: 5px;
-  //color: #ffffff;
-  background-color: rgb(240, 231, 105);
-
-  &__link {
-    line-height: 2.2em;
-  }
-}
