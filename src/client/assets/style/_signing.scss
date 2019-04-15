@@ -8,6 +8,7 @@
   margin: 5% auto 15% auto;
   border: 1px solid #888;
   width: 40%;
+  text-align: center;
 
   &__input {
     width: 100%;
@@ -19,6 +20,7 @@
 
   &__button {
     color: rgb(41, 98, 202);
+    font-weight: bold;
     margin: 8px 0;
     position: relative;
     font-size: 1.2em;
