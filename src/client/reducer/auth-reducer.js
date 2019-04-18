@@ -4,11 +4,8 @@ import isEmpty from "./isEmpty";
 const authReducer = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.SET_CURRENT_USER:
-      console.log("reducer");
-      console.log(action);
-
       return {
-        ...state, //do I need it???
+        ...state,
         isAuthenticated: !isEmpty(action.payload),
         user: action.payload
       };
