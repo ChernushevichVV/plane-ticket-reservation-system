@@ -3,7 +3,23 @@ import { actionTypes } from "./actionTypes";
 import setAuthToken from "../setAuthToken";
 import jwt_decode from "jwt-decode";
 
-export const loginUser = (user,history) => dispatch => {
+export const registerUser = user => dispatch => {
+  axios
+    .post("/api/users/register", user)
+    .then(
+      /*temporary decision*/ () => {
+        alert("successful registration!");
+      }
+    )
+    .catch(err => {
+      dispatch({
+        type: actionTypes.GET_ERRORS,
+        payload: err.response.data
+      });
+    });
+};
+
+export const loginUser = (user, history) => dispatch => {
   axios
     .post("/api/users/login", user)
     .then(res => {
@@ -11,10 +27,6 @@ export const loginUser = (user,history) => dispatch => {
       localStorage.setItem("jwtToken", token);
       setAuthToken(token);
       const decoded = jwt_decode(token);
-      console.log("decoded");
-
-      console.log(decoded);
-
       dispatch(setCurrentUser(decoded));
       history.push("/user");
     })
@@ -33,9 +45,4 @@ export const setCurrentUser = decoded => {
   };
 };
 
-export const logoutUser = history => dispatch => {
-  localStorage.removeItem("jwtToken");
-  setAuthToken(false);
-  dispatch(setCurrentUser({}));
-  history.push("/");
-};
+export const resetErrors = () => {};
