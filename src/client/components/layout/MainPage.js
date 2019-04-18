@@ -4,33 +4,48 @@ import Section from "../pages/mainpage/Section";
 import Footer from "../pages/mainpage/Footer";
 import { Route, Switch } from "react-router-dom";
 import User from "../pages/accounts/User";
-import SignWindow from "../pages/mainpage/SignWindow";
+
 export class MainPage extends Component {
   state = {
-    showLogin: false
+    showLogin: false,
+    showSignUp: false
   };
 
-  handleClick = () => {
+  handleLogInClick = () => {
     this.setState(state => ({
       showLogin: !state.showLogin
     }));
   };
 
+  handleSignUpClick = () => {
+    this.setState(state => ({
+      showSignUp: !state.showSignUp
+    }));
+  };
+
   render() {
+    const { showLogin, showSignUp } = this.state;
+
     return (
       <div className="mainpage">
-        <Header logInClick={this.handleClick} />
+        <Header
+          logInClick={this.handleLogInClick}
+          signUpClick={this.handleSignUpClick}
+        />
         <Switch>
           <Route path="/user" component={User} />
-          <Route path="/" component={Section} />
+          <Route
+            path="/"
+            render={() => (
+              <Section
+                showLogin={showLogin}
+                showSignUp={showSignUp}
+                closeLogin={this.handleLogInClick}
+                closeSignUp={this.handleSignUpClick}
+              />
+            )}
+          />
         </Switch>
-        <SignWindow
-          show={this.state.showLogin}
-          onClick={this.handleClick}
-          title="Log into your account"
-          buttonLabel="Log in"
-          nickPlaceholder="Email or username"
-        />
         <Footer />
       </div>
     );
