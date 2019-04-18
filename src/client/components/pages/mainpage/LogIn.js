@@ -4,6 +4,7 @@ import CloseButton from "../../misc/CloseButton";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../../action/authentication";
+import { resetErrors } from "../../../action/index";
 import { withRouter } from "react-router-dom";
 import classnames from "classnames";
 
@@ -18,6 +19,9 @@ class LogIn extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+    if (this.state.errors) {
+      this.props.resetErrors();
+    }
   };
 
   handleSubmit = e => {
@@ -29,46 +33,30 @@ class LogIn extends Component {
     this.props.loginUser(user, this.props.history);
   };
 
+  handleClose = () => {
+    this.setState({
+      name: "",
+      password: ""
+    });
+    this.props.onClick();
+    this.props.resetErrors();
+  };
+
   static getDerivedStateFromProps(props) {
-    // console.log("gDSFP");
-    // console.log(props);
-    // console.log(state);
     return {
       errors: props.errors
     };
   }
 
-  // shouldComponentUpdate() {
-  //   console.log("should");
-  //   return true;
-  // }
-
   componentWillUnmount() {
-    //maybe should close it on logout?
-    this.props.onClick(); //in order to close the modal
-    console.log("unmount");
+    if (this.props.show) {
+      this.props.onClick(); //in order to close the modal
+    }
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.auth.isAuthenticated) {
-  //     console.log("props");
-  //     this.props.history.push("/user");
-  //     this.props.onClick();
-  //   }
-  //   // if (nextProps.errors) {
-  //   //   this.setState({
-  //   //     errors: nextProps.errors
-  //   //   });
-  //   //}
-  // }
-
   render() {
-    // console.log("render");
-
-    const { show, onClick } = this.props;
-    // const { isAuthenticated, user } = this.props.auth;
-    const { errors } = this.state;
-    // console.log(errors);
+    const { show } = this.props;
+    const { name, password, errors } = this.state;
 
     const style = classNames({
       "display-none": !show,
@@ -77,8 +65,8 @@ class LogIn extends Component {
 
     return (
       <div className={style}>
-        <form className="modal-content animation">
-          <CloseButton onClick={onClick} />
+        <form className="modal-content animation" noValidate>
+          <CloseButton onClick={this.handleClose} />
           <div className="inputs">
             <b>Log into your account </b>
             <br />
@@ -90,16 +78,19 @@ class LogIn extends Component {
               type="text"
               placeholder="Email or username"
               name="name"
-              // autoComplete="off"
+              value={name}
               onChange={this.handleInputChange}
               required
             />
-
+            {errors.name && (
+              <div className="modal-content__error">{errors.name}</div>
+            )}
             <input
               className={classnames("modal-content__input", {
                 "input--invalid": errors.password
               })}
               type="password"
+              value={password}
               placeholder="Password"
               //pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
@@ -107,6 +98,9 @@ class LogIn extends Component {
               onChange={this.handleInputChange}
               required
             />
+            {errors.password && (
+              <div className="modal-content__error">{errors.password}</div>
+            )}
             <button
               onClick={this.handleSubmit}
               className="button modal-content__button"
@@ -128,8 +122,7 @@ LogIn.propTypes = {
   show: PropTypes.bool,
   onClick: PropTypes.func,
   loginUser: PropTypes.func.isRequired,
-  // logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
+  resetErrors: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
   history: PropTypes.object
 };
@@ -143,6 +136,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { loginUser }
+  { loginUser, resetErrors }
 )(withRouter(LogIn));
-//export default LogIn;
