@@ -9,7 +9,10 @@ export class TicketDetails extends Component {
         ticket info
         <br />
         price : {this.props.price}
-        <button className="ticket-details__button" onClick={this.props.onClose}>
+        <button
+          className="button ticket-details__button"
+          onClick={this.props.onClose}
+        >
           {this.props.buttonLabel}
         </button>
       </div>

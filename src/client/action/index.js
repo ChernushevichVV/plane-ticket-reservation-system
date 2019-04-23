@@ -27,3 +27,9 @@ export function deletePassenger(payload) {
 export function changeSeatSelection(payload) {
   return { type: actionTypes.CHANGE_SEAT_SELECTION, payload };
 }
+
+export const resetErrors = () => {
+  return {
+    type: actionTypes.RESET_ERRORS
+  };
+};

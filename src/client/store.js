@@ -1,6 +1,7 @@
-import { createStore, compose } from "redux";
+import { createStore, compose, applyMiddleware } from "redux";
 //import rootReducer from "./reducer/rootReducer";
 import { combineReducers } from "redux";
+import thunk from "redux-thunk";
 import * as reducers from "./reducer/index";
 
 const preloadedState = {
@@ -17,16 +18,19 @@ const preloadedState = {
     adult: 1,
     child: 0
   },
-  seats: []
+  seats: [],
+  errors: {},
+  auth: {
+    isAuthenticated: false,
+    user: {}
+  }
 };
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   combineReducers(reducers),
   preloadedState,
-  compose(
-    //applyMiddleware(forbiddenWordsMiddleware),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
-  )
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 export default store;

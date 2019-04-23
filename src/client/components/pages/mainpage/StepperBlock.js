@@ -7,12 +7,12 @@ import { deletePassenger } from "../../../action/index";
 
 class ConnectedStepperBlock extends Component {
   handleDecrement = e => {
-    const type = e.target.id;
+    const type = e.target.name;
     this.props.deletePassenger(type);
   };
 
   handleIncrement = e => {
-    const type = e.target.id;
+    const type = e.target.name;
     this.props.addPassenger(type);
   };
 
@@ -21,7 +21,7 @@ class ConnectedStepperBlock extends Component {
       <div className="content">
         <Stepper
           label="Adult(18+)"
-          id="adult"
+          name="adult"
           minValue={1}
           maxValue={6}
           num={this.props.passenger.adult}
@@ -30,7 +30,7 @@ class ConnectedStepperBlock extends Component {
         />
         <Stepper
           label="Child(0-18)"
-          id="child"
+          name="child"
           minValue={0}
           maxValue={6}
           num={this.props.passenger.child}

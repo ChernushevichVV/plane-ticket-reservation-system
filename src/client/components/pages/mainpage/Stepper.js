@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Stepper = props => {
   const {
-    id,
+    name,
     minValue,
     maxValue,
     label,
@@ -19,7 +19,8 @@ const Stepper = props => {
           disabled={num <= minValue}
           className="stepper-input__button button"
           onClick={onDecrement}
-          id={id}
+          name={name}
+          type="button"
         >
           -
         </button>
@@ -33,7 +34,8 @@ const Stepper = props => {
           disabled={num >= maxValue}
           className="stepper-input__button button"
           onClick={onIncrement}
-          id={id}
+          name={name}
+          type="button"
         >
           +
         </button>
@@ -44,7 +46,7 @@ const Stepper = props => {
 };
 
 Stepper.propTypes = {
-  id: PropTypes.string,
+  name: PropTypes.string,
   minValue: PropTypes.number,
   maxValue: PropTypes.number,
   label: PropTypes.string,
