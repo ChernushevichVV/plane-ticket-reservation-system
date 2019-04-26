@@ -36,7 +36,6 @@
   align-items: center;
 
   &__button {
-    border: 5px solid black;
     display: block;
     margin: 10px;
     height: 90%;
@@ -58,7 +57,7 @@
   background-image: url(../images/air-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
+  width: auto;
   //height: 80%;
   min-height: 90%;
   max-height: max-content;
@@ -88,5 +87,45 @@
     padding: 1em;
     display: inline-block;
     position: relative;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    height: 4em;
+
+    &__text {
+      float: none;
+      text-align: center;
+      font-size: 1em;
+      font-weight: 600;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+  .section {
+    top: 3em;
+    width: auto;
+  }
+  .footer {
+    top: 3em;
+  }
+  .sign-buttons-block {
+    margin: 5px auto 5px auto;
+    border-top: 1px solid black;
+    float: none;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+
+    &__button {
+      display: block;
+      margin: 10px;
+      height: 90%;
+      width: 100%;
+      font-size: 0.9em;
+    }
   }
 }

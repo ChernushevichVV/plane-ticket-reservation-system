@@ -40,3 +40,13 @@
     float: left;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .modal-content {
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid #888;
+    width: 90%;
+    text-align: center;
+  }
+}
