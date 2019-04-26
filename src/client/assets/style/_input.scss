@@ -1,3 +1,10 @@
+input {
+  width: 100%;
+}
+input[type="radio"] {
+  width: initial;
+}
+
 .input:disabled,
 .input[disabled] {
   border: 1px solid #999999;

@@ -1,6 +1,7 @@
 .button {
   border-radius: 2px;
   outline: none;
+  width: 100%;
   &:hover {
     cursor: pointer;
   }
@@ -23,16 +24,16 @@
 
 .search-button {
   position: relative;
-  float: right;
+  //float: right;
   color: #2962ca;
   text-align: center;
   line-height: 2em;
-  bottom: 2em;
-  right: 2em;
+  // bottom: 2em;
+  // right: 2em;
   font-size: 1.2em;
   font-weight: 700;
   height: 2.2em;
-  width: 7em;
+  //width: 7em;
   border-radius: 5px;
   background-color: rgb(240, 231, 105);
 }

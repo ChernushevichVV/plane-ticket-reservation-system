@@ -30,7 +30,8 @@ class ConnectedDestinationBlock extends Component {
     ];
 
     return (
-      <div className="content airport-picker-block">
+      //<div className="airport-picker-block">
+      <>
         <AirportPicker
           placeholder="From"
           airports={departureAirports}
@@ -41,7 +42,7 @@ class ConnectedDestinationBlock extends Component {
           airports={destinationAirports}
           onChange={this.handleAirportChange}
         />
-      </div>
+      </>
     );
   }
 }

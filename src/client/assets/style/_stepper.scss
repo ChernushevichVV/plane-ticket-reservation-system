@@ -1,6 +1,6 @@
 .stepper-input {
   display: flex;
-  margin-left: 2em;
+  //margin-left: 2em;
 
   &__input {
     border-left: 0;
@@ -26,4 +26,6 @@
 .stepper-wrapper {
   text-align: center;
   //border: 1px solid black;
+
+  padding: 10px;
 }

@@ -18,7 +18,7 @@ class ConnectedStepperBlock extends Component {
 
   render() {
     return (
-      <div className="content">
+      <>
         <Stepper
           label="Adult(18+)"
           name="adult"
@@ -37,7 +37,7 @@ class ConnectedStepperBlock extends Component {
           onIncrement={this.handleIncrement}
           onDecrement={this.handleDecrement}
         />
-      </div>
+      </>
     );
   }
 }

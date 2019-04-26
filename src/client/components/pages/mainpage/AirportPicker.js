@@ -7,7 +7,7 @@ const AirportPicker = props => {
   return (
     <div className="airport-picker">
       <label>
-        From
+        {placeholder}
         <br />
         <input
           className="airport-picker__input"

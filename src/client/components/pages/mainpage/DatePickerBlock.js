@@ -22,32 +22,37 @@ class ConnectedDatePickerBlock extends Component {
     const { departureDate, returnDate, tripType } = this.props;
 
     return (
-      <div className="content date-picker">
-        <div className="date-picker__input">
+      <>
+        <div className="date-picker">
+          {/* <div className="date-picker__input"> */}
           <label className="date-picker__label">
-            <h4>Departure date</h4>
+            Departure date
             <DatePicker
               id="departure"
               onChange={this.handleChangeDeparture}
               monthsShown={2}
               selected={departureDate}
               placeholderText="something"
+              className="date-picker__input"
             />
           </label>
         </div>
-        <div className="date-picker__input">
+        <div className="date-picker">
+          {/* <div className="date-picker__input"> */}
           <label className="date-picker__label">
-            <h4>Return date</h4>
+            Return date
             <DatePicker
               id="return"
               onChange={this.handleChangeReturn}
               monthsShown={2}
               selected={returnDate}
               disabled={tripType === "oneway"}
+              className="date-picker__input"
             />
           </label>
+          {/* </div> */}
         </div>
-      </div>
+      </>
     );
   }
 }
