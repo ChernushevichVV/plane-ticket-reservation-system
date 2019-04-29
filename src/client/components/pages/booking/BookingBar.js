@@ -1,10 +1,11 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
-import getCurrentStep from "./getCurrentStep";
+import { getCurrentStep, getLink, getSteps } from "./utilsBookingBar";
+import LinkContainer from "../../misc/LinkContainer";
 
 // const styles = theme => ({
 //   // root: {
@@ -19,37 +20,32 @@ import getCurrentStep from "./getCurrentStep";
 //   // }
 // });
 
-function getSteps() {
-  return [
-    "Flight selection",
-    "Seat selection",
-    "Luggage",
-    "Personal data",
-    "Payment",
-    "Confirmation"
-  ];
-}
-
 const BookingBar = props => {
   const [activeStep, setActiveStep] = useState(0);
   const { history } = props;
+
   useEffect(() => {
     setActiveStep(getCurrentStep(history));
   }, [props]);
 
   const steps = getSteps();
 
+  const alternativeLabel = window.innerWidth > 480 && window.innerWidth < 768;
+
   return (
     <div className="booking-bar">
       {/* <div className={classes.root}> */}
-      <Stepper activeStep={activeStep} alternativeLabel={false}>
-        {steps.map(label => {
+      <Stepper activeStep={activeStep} alternativeLabel={alternativeLabel}>
+        {steps.map((label, index) => {
           const props = {};
           const labelProps = {};
-
+          const link = getLink(index);
+          label = window.innerWidth < 480 ? "" : label;
           return (
             <Step key={label} {...props}>
-              <StepLabel {...labelProps}>{label}</StepLabel>
+              <StepLabel {...labelProps}>
+                <LinkContainer link={link} label={label} />
+              </StepLabel>
             </Step>
           );
         })}
