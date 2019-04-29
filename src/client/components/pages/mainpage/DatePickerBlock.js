@@ -24,33 +24,30 @@ class ConnectedDatePickerBlock extends Component {
     return (
       <>
         <div className="date-picker">
-          {/* <div className="date-picker__input"> */}
-          <label className="date-picker__label">
+          <label htmlFor="departure" className="date-picker__label">
             Departure date
-            <DatePicker
-              id="departure"
-              onChange={this.handleChangeDeparture}
-              monthsShown={2}
-              selected={departureDate}
-              placeholderText="something"
-              className="date-picker__input"
-            />
           </label>
+          <DatePicker
+            id="departure"
+            onChange={this.handleChangeDeparture}
+            monthsShown={2}
+            selected={departureDate}
+            placeholderText="something"
+            className="date-picker__input input"
+          />
         </div>
         <div className="date-picker">
-          {/* <div className="date-picker__input"> */}
-          <label className="date-picker__label">
+          <label htmlFor="return" className="date-picker__label">
             Return date
-            <DatePicker
-              id="return"
-              onChange={this.handleChangeReturn}
-              monthsShown={2}
-              selected={returnDate}
-              disabled={tripType === "oneway"}
-              className="date-picker__input"
-            />
           </label>
-          {/* </div> */}
+          <DatePicker
+            id="return"
+            onChange={this.handleChangeReturn}
+            monthsShown={2}
+            selected={returnDate}
+            disabled={tripType === "oneway"}
+            className="date-picker__input input"
+          />
         </div>
       </>
     );

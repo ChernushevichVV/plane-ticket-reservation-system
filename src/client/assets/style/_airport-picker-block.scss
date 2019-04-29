@@ -1,21 +1,13 @@
-// .airport-picker-block {
-//   font-size: 0.8em;
-//   font-weight: bold;
-//   width: 100%;
-// }
-
 .airport-picker {
-  //border: 1px solid black;
   font-weight: 600;
-
-  //min-width: 3rem;
-  //width: 200px;
   width: 40%;
   //height: 40px;
   margin: 0px 10px;
+}
 
-  &__input {
-    height: 3em;
-    border-radius: 3px;
+@media screen and (max-width: 479px) {
+  .airport-picker {
+    width: 100%;
+    margin: 0;
   }
 }

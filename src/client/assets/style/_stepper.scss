@@ -29,3 +29,10 @@
 
   padding: 10px;
 }
+
+@media screen and (max-width: 479px) {
+  .stepper-input {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

@@ -28,7 +28,7 @@ const Stepper = props => {
           readOnly
           type="text"
           value={num}
-          className="input stepper-input__input"
+          className="input stepper-input__input none-pointer"
         />
         <button
           disabled={num >= maxValue}

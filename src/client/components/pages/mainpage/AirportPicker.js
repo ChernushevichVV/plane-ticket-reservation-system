@@ -10,7 +10,7 @@ const AirportPicker = props => {
         {placeholder}
         <br />
         <input
-          className="airport-picker__input"
+          className="input"
           type="text"
           name="airports"
           placeholder={placeholder}

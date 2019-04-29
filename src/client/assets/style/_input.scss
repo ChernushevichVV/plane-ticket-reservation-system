@@ -1,18 +1,22 @@
 input {
   width: 100%;
 }
-input[type="radio"] {
+input[type="radio"],
+input[type="checkbox"] {
   width: initial;
 }
 
 .input:disabled,
 .input[disabled] {
   border: 1px solid #999999;
-  background-color: #5c5858;
-  color: #5c5858;
+  background-color: #d1d1d1;
+  color: #666666;
 }
 
 .input {
+  height: 3em;
+  border-radius: 3px;
+
   &--invalid {
     border-color: red !important;
     position: relative;
