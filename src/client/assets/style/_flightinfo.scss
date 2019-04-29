@@ -40,7 +40,7 @@
   }
 }
 
-//override DatePicker classes
+//override standart DatePicker classes
 .react-datepicker-wrapper {
   width: 100%;
 }
@@ -49,6 +49,11 @@
 }
 
 @media screen and (max-width: 479px) {
+  //override standart DatePicker class
+  .react-datepicker__month-container {
+    float: none !important;
+  }
+
   .flight-info {
     position: relative;
     margin: 0;
@@ -84,6 +89,10 @@
   }
 }
 @media screen and (min-width: 480px) and (max-width: 768px) {
+  //override standart DatePicker class
+  .react-datepicker__month-container {
+    float: none !important;
+  }
   .flight-info {
     margin: 0 5%;
     top: 10%;
