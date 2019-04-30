@@ -1,5 +1,5 @@
 .button {
-  border-radius: 2px;
+  border-radius: 3px;
   outline: none;
   width: 100%;
   &:hover {
@@ -7,19 +7,23 @@
   }
 }
 
+.button:disabled,
+.button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 .next-button {
   position: relative;
-  margin: 10px;
-  height: 2em;
+  height: 1.8em;
   width: 4em;
   border-radius: 4px;
   font-size: 1.1em;
   font-weight: bold;
   background-color: rgb(240, 231, 105);
-
-  &__link {
-    line-height: 1.9em;
-  }
+  color: rgb(41, 98, 202);
+  line-height: 1.7em;
 }
 
 .search-button {
@@ -28,8 +32,6 @@
   color: #2962ca;
   text-align: center;
   line-height: 1.8em;
-  // bottom: 2em;
-  // right: 2em;
   font-size: 1.2em;
   font-weight: 700;
   height: 2em;
@@ -53,23 +55,6 @@
   }
 }
 
-.button-link {
-  display: block;
-  text-align: center;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  color: rgb(41, 98, 202);
-  text-decoration: none;
-}
-
-.button:disabled,
-.button[disabled] {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
-
 .link {
   display: inline-block;
   text-decoration: none;
@@ -87,6 +72,5 @@
     font-weight: 600;
     width: 100%;
     border-radius: 0px;
-    background-color: rgb(240, 231, 105);
   }
 }
