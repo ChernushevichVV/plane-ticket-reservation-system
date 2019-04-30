@@ -1,8 +1,7 @@
 .flight-info {
   position: relative;
   margin: 0 25%;
-  //background-color: rgba(41, 98, 202, 0.5);
-  background-color: rgba(214, 219, 230, 0.7);
+  background-color: $forms-color;
   width: 50%;
   top: 3em;
   padding: 10px;
@@ -28,6 +27,12 @@
   &__radio {
     //tbd
   }
+}
+.airport-picker {
+  font-weight: 600;
+  width: 40%;
+  //height: 40px;
+  margin: 0px 10px;
 }
 
 .date-picker {
@@ -72,6 +77,10 @@
   }
   .oneway-return {
     justify-content: space-around;
+  }
+  .airport-picker {
+    width: 100%;
+    margin: 0;
   }
   .date-picker {
     width: 100%;
