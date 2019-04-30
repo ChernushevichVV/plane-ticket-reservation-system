@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TicketsDetailsBlock from "./TicketsDetailsBlock";
+import TicketsContainer from "./TicketsContainer";
 
 export class TicketPicker extends Component {
   state = {
@@ -25,7 +25,7 @@ export class TicketPicker extends Component {
             {this.props.buttonLabel} {/*Continue*/}
           </button>
         </div>
-        <TicketsDetailsBlock
+        <TicketsContainer
           show={this.state.isModalOpen}
           onClose={this.toggleModal}
         />

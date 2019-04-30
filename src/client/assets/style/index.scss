@@ -10,8 +10,8 @@ body,
   height: 100%;
 }
 
-$forms-color: rgb(241, 231, 234); //rgb(230, 219, 219);
-//$forms-color: #f7fff7;
+//$forms-color: rgb(241, 231, 234); //rgb(230, 219, 219);
+$forms-color: rgba(214, 219, 230, 0.8);
 
 .none-pointer {
   pointer-events: none;
@@ -56,13 +56,11 @@ $forms-color: rgb(241, 231, 234); //rgb(230, 219, 219);
 
 @import "flightinfo";
 
-@import "flight-picker";
+@import "flights-list";
 
 @import "flight-details-block";
 
-@import "ticket-details-block";
-
-@import "airport-picker-block";
+@import "ticket-container";
 
 @import "seat-selection";
 
