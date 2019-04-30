@@ -1,22 +1,23 @@
 import React, { Component } from "react";
 import FlightDetailsBlock from "./FlightDetailsBlock";
-import DateCarousel from "./DateCarousel";
+//import DateCarousel from "./DateCarousel";
 import TotalCost from "../../../misc/TotalCost";
 import NextButton from "../../../misc/NextButton";
 import PropTypes from "prop-types";
 
 export class FlightPicker extends Component {
   render() {
-    const { date, departure, destination } = this.props;
+    const { /*date,*/ departure, destination } = this.props;
 
     return (
-      <div className="flight-picker">
-        <DateCarousel date={date} />
+      <div className="flights-list">
+        {/* reserved for future released */}
+        {/* <DateCarousel date={date} /> */}
         {/* the nubmer of these componenets == nubmer of flights */}
         <FlightDetailsBlock from={departure} to={destination} />
         <FlightDetailsBlock from={departure} to={destination} />
 
-        <div className="flight-picker__cost-button-block">
+        <div className="flights-list__cost-button-block">
           <TotalCost cost="100$" />
           <NextButton link="/booking/seat" />
         </div>
