@@ -1,42 +1,58 @@
-.flight-details-block {
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 1px solid black;
-  width: 100%;
+@media screen and (min-width: 320px) {
+  .flight-details-block {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    width: 100%;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .flight-details {
+    //border: 1px solid black;
+
+    &__time {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+    &__airport {
+      font-size: 1em;
+    }
+  }
+
+  .flight-route {
+    font-size: 1.2em;
+    background-color: white;
+  }
+  .route-details {
+    //border: 1px solid black;
+
+    &__time {
+      font-weight: 500;
+    }
+    &__type {
+      font-size: 0.8em;
+      font-weight: bold;
+    }
+  }
+
+  .ticket-picker {
+    font-size: 1.3em;
+    //border: 1px solid black;
+
+    &__button {
+      font-size: 0.8em;
+      display: block;
+      margin: 5px auto;
+      padding: 5px;
+      border-radius: 4px;
+    }
+  }
 }
-
-.flight-details {
-  //border: 1px solid black;
-
-  &__time {
-    font-weight: bold;
-    font-size: 1.5em;
-  }
-  &__airport {
-    font-size: 1em;
-  }
-}
-
-.route-details {
-  //border: 1px solid black;
-
-  &__time {
-    font-weight: 500;
-  }
-  &__type {
-    font-size: 0.8em;
-    font-weight: bold;
-  }
-}
-
-.ticket-picker {
-  font-size: 1.3em;
-  //border: 1px solid black;
-
-  &__button {
-    display: block;
-    margin: 5px auto;
-    padding: 5px;
-    border-radius: 4px;
+@media screen and (min-width: 480px) {
+  .flight-route {
+    //width: 90%;
   }
 }
