@@ -1,38 +1,43 @@
-.stepper-input {
-  display: flex;
-  //margin-left: 2em;
+@media screen and (min-width: 320px) {
+  .stepper-input {
+    display: flex;
+    //margin-left: 2em;
 
-  &__input {
-    border-left: 0;
-    border-right: 0;
-    width: 3.5em;
+    &__input {
+      border-left: 0;
+      border-right: 0;
+      width: 3.5em;
+      text-align: center;
+      border: 1px solid #d7dbdd;
+      padding: 0 10px;
+      border-radius: 0;
+    }
+
+    &__button {
+      cursor: pointer;
+      padding: 5px 15px;
+      color: #ffffff;
+      //background-color: #4ebbe4;
+      background-color: $inner-btn-back;
+      font-size: 0.7em;
+      font-weight: 800;
+      border-width: 0;
+      //height: 3em !important;
+      //border: 1px solid #16a2d7;
+      //border: none;
+    }
+  }
+
+  .stepper-wrapper {
     text-align: center;
-    border: 1px solid #d7dbdd;
-    padding: 0 10px;
-    border-radius: 0;
-  }
+    //border: 1px solid black;
 
-  &__button {
-    cursor: pointer;
-    padding: 5px 15px;
-    color: #ffffff;
-    background-color: #4ebbe4;
-    font-size: 0.7em;
-    font-weight: 800;
-    border: 1px solid #16a2d7;
+    padding: 10px;
   }
 }
-
-.stepper-wrapper {
-  text-align: center;
-  //border: 1px solid black;
-
-  padding: 10px;
-}
-
 @media screen and (max-width: 479px) {
   .stepper-input {
-    width: 50%;
+    width: 7em;
     margin: 0 auto;
   }
 }
