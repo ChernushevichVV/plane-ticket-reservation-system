@@ -14,6 +14,7 @@ export class FlightsList extends Component {
         {/* the nubmer of these componenets == nubmer of flights */}
         <FlightDetailsBlock from={departure} to={destination} />
         <FlightDetailsBlock from={departure} to={destination} />
+        <FlightDetailsBlock from={departure} to={destination} />
       </div>
     );
   }

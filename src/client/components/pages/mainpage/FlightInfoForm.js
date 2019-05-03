@@ -23,7 +23,7 @@ class FlightInfoForm extends Component {
         </div>
         <div className="flight-info__row">
           <div className="flight-info__button">
-            <button className="button search-button" type="submit">
+            <button className="button next-button" type="submit">
               <LinkContainer link="/booking/flight" label="Search" />
             </button>
           </div>

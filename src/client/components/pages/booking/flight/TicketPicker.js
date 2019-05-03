@@ -19,7 +19,7 @@ export class TicketPicker extends Component {
           From {this.props.price}
           {this.props.currency}
           <button
-            className="ticket-picker__button button"
+            className="ticket-picker__button inner-button button"
             onClick={this.toggleModal}
           >
             {this.props.buttonLabel} {/*Continue*/}

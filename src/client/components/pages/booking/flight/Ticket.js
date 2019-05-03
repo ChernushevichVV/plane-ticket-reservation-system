@@ -11,7 +11,10 @@ export class TicketDetails extends Component {
           fringilla libero quis aliquam.
         </p>
         price : {this.props.price}
-        <button className="button ticket__button" onClick={this.props.onClose}>
+        <button
+          className="ticket__button inner-button button"
+          onClick={this.props.onClose}
+        >
           {this.props.buttonLabel}
         </button>
       </div>

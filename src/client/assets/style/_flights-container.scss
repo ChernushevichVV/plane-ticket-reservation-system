@@ -1,0 +1,91 @@
+@media screen and (min-width: 320px) {
+  .booking-bar {
+    padding: 0;
+    background: $white-color;
+  }
+  .flights-container {
+    padding: 10px;
+    margin-top: 2em;
+  }
+
+  .flights-list {
+    width: 100%;
+    border-radius: 3px;
+    background-color: $forms-color;
+    font-size: 0.9em;
+  }
+
+  .summary-container {
+    margin: 1em auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $white-color;
+    width: 95%;
+    border-radius: 3px;
+    border: 1px solid #666;
+  }
+
+  .summary {
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .booking-bar {
+    padding: 0;
+  }
+  .flights-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .summary-container {
+    width: 87%;
+
+    &__button {
+      font-size: 1.2em;
+      width: 5em;
+      margin-left: 77%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .booking-bar {
+    padding: 0 10%;
+  }
+  .flights-container {
+    width: 80%;
+  }
+  .summary-container {
+    width: 78%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .flights-container {
+    width: 60%;
+  }
+  .summary-container {
+    position: absolute;
+    //height: 5em;
+    padding: 1em;
+    width: 15%;
+    top: 6em;
+    right: 2em;
+
+    &__button {
+      width: 4em;
+      margin-left: 50%;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .summary-container {
+    right: 3em;
+    &__button {
+      margin-left: 65%;
+    }
+  }
+}

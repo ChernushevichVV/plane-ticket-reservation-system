@@ -12,6 +12,13 @@ body,
 
 //$forms-color: rgb(241, 231, 234); //rgb(230, 219, 219);
 $forms-color: rgba(214, 219, 230, 0.8);
+$white-color: #ffffff;
+$blue-color: #2962ca;
+$yellow: rgb(240, 231, 105);
+
+$inner-btn-back: $blue-color;
+$inner-btn-color: $white-color;
+$next-btn-back: $yellow;
 
 .none-pointer {
   pointer-events: none;
@@ -46,17 +53,17 @@ $forms-color: rgba(214, 219, 230, 0.8);
   }
 }
 
-@import "stepper";
-
 @import "button";
 
 @import "input";
+
+@import "stepper";
 
 @import "mainpage";
 
 @import "flightinfo";
 
-@import "flights-list";
+@import "flights-container";
 
 @import "flight-details-block";
 

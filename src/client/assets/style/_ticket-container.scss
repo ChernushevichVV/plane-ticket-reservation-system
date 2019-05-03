@@ -3,8 +3,10 @@
     position: relative;
     top: -4em;
     background-color: #fff;
-
+    width: 90%;
+    margin: 0 auto;
     padding: 15px;
+    box-shadow: 0 0 2px #fff;
 
     .tickets {
       display: flex;
@@ -29,14 +31,12 @@
 @media screen and (min-width: 480px) {
   .tickets-container {
     top: -2em;
-    margin: 0 auto;
     width: 60%;
   }
 }
 @media screen and (min-width: 768px) {
   .tickets-container {
     top: 5em;
-    margin: 0 auto;
     min-width: 80%;
     max-width: max-content;
 
