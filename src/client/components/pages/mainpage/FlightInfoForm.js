@@ -9,13 +9,25 @@ class FlightInfoForm extends Component {
   render() {
     return (
       <form className="flight-info">
-        <OneWayReturnChoice />
-        <AirportPickerBlock />
-        <DatePickerBlock />
-        <StepperBlock />
-        <button className="button search-button" type="submit">
-          <LinkContainer link="/booking/flight" label="Search" />
-        </button>
+        <div className="flight-info__row">
+          <OneWayReturnChoice />
+        </div>
+        <div className="flight-info__row">
+          <AirportPickerBlock />
+        </div>
+        <div className="flight-info__row">
+          <DatePickerBlock />
+        </div>
+        <div className="flight-info__row">
+          <StepperBlock />
+        </div>
+        <div className="flight-info__row">
+          <div className="flight-info__button">
+            <button className="button next-button" type="submit">
+              <LinkContainer link="/booking/flight" label="Search" />
+            </button>
+          </div>
+        </div>
       </form>
     );
   }

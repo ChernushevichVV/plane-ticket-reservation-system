@@ -1,42 +1,58 @@
-.inputs {
-  padding: 16px;
+@media screen and (min-width: 320px) {
+  .inputs {
+    padding: 16px;
+  }
+
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 2px #fff;
+
+    &__input {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+    }
+
+    &__button {
+      color: $inner-btn-back;
+      font-weight: bold;
+      margin: 8px 0;
+      position: relative;
+      font-size: 1.2em;
+      height: 2.4em;
+      width: 100%;
+      background-color: $next-btn-back;
+    }
+
+    &__link {
+      line-height: 2.2em;
+    }
+
+    &__error {
+      margin-top: -7px;
+      font-size: 0.8em;
+      color: red;
+      float: left;
+    }
+  }
 }
 
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: 5% auto 15% auto;
-  border: 1px solid #888;
-  width: 40%;
-  text-align: center;
-
-  &__input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
+@media screen and (min-width: 480px) {
+  .modal-content {
+    margin: 0 auto;
+    width: 70%;
   }
+}
 
-  &__button {
-    color: rgb(41, 98, 202);
-    font-weight: bold;
-    margin: 8px 0;
-    position: relative;
-    font-size: 1.2em;
-    height: 2.4em;
-    width: 100%;
-    background-color: rgb(240, 231, 105);
-  }
-
-  &__link {
-    line-height: 2.2em;
-  }
-
-  &__error {
-    margin-top: -7px;
-    font-size: 0.8em;
-    color: red;
-    float: left;
+@media screen and (min-width: 768px) {
+  .modal-content {
+    width: 40%;
   }
 }

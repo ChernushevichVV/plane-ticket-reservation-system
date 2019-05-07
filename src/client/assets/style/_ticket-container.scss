@@ -1,0 +1,52 @@
+@media screen and (min-width: 320px) {
+  .tickets-container {
+    position: relative;
+    top: -4em;
+    background-color: #fff;
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px;
+    box-shadow: 0 0 2px #fff;
+
+    .tickets {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .ticket {
+      // border: 1px solid black;
+      margin: 1em;
+      padding: 5px;
+      background-color: $forms-color;
+      border-radius: 3px;
+
+      &__button {
+        margin-top: 5px;
+        padding: 5px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 480px) {
+  .tickets-container {
+    top: -2em;
+    width: 60%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .tickets-container {
+    top: 5em;
+    min-width: 80%;
+    max-width: max-content;
+
+    .tickets {
+      flex-direction: row;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .tickets-container {
+    min-width: 50%;
+  }
+}

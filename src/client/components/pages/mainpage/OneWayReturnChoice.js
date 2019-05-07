@@ -14,7 +14,7 @@ class ConnectedChoice extends Component {
 
   render() {
     return (
-      <div className="content oneway-return">
+      <div className="oneway-return">
         <input
           id="OneWay"
           className="oneway-return__radio"

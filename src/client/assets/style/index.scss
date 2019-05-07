@@ -4,8 +4,21 @@
   padding: 0;
 }
 
-$forms-color: rgb(241, 231, 234); //rgb(230, 219, 219);
-//$forms-color: #f7fff7;
+html,
+body,
+#root {
+  height: 100%;
+}
+
+//$forms-color: rgb(241, 231, 234); //rgb(230, 219, 219);
+$forms-color: rgba(214, 219, 230, 0.8);
+$white-color: #ffffff;
+$blue-color: #2962ca;
+$yellow: rgb(240, 231, 105);
+
+$inner-btn-back: $blue-color;
+$inner-btn-color: $white-color;
+$next-btn-back: $yellow;
 
 .none-pointer {
   pointer-events: none;
@@ -40,25 +53,21 @@ $forms-color: rgb(241, 231, 234); //rgb(230, 219, 219);
   }
 }
 
-@import "stepper";
-
 @import "button";
 
 @import "input";
+
+@import "stepper";
 
 @import "mainpage";
 
 @import "flightinfo";
 
-@import "booking";
-
-@import "flight-picker";
+@import "flights-container";
 
 @import "flight-details-block";
 
-@import "ticket-details-block";
-
-@import "airport-picker-block";
+@import "ticket-container";
 
 @import "seat-selection";
 

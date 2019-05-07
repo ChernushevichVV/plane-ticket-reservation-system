@@ -5,7 +5,7 @@ import React from "react";
 const Legend = () => {
   return (
     <div className="legend">
-      Seat information
+      <p className="legend__p">Seat information</p>
       <hr />
       <div className="legend__seat">
         <div className="seat none-pointer" />
