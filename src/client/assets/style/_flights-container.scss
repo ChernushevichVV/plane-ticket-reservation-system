@@ -15,7 +15,7 @@
     font-size: 0.9em;
   }
 
-  .summary-container {
+  .summary {
     margin: 1em auto;
     padding: 15px;
     display: flex;
@@ -25,9 +25,6 @@
     width: 95%;
     border-radius: 3px;
     border: 1px solid #666;
-  }
-
-  .summary {
   }
 }
 
@@ -40,7 +37,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .summary-container {
+  .summary {
     width: 87%;
 
     &__button {
@@ -58,7 +55,7 @@
   .flights-container {
     width: 80%;
   }
-  .summary-container {
+  .summary {
     width: 78%;
   }
 }
@@ -67,7 +64,7 @@
   .flights-container {
     width: 60%;
   }
-  .summary-container {
+  .summary {
     position: absolute;
     //height: 5em;
     padding: 1em;
@@ -82,7 +79,7 @@
   }
 }
 @media screen and (min-width: 1200px) {
-  .summary-container {
+  .summary {
     right: 3em;
     &__button {
       margin-left: 65%;

@@ -7,8 +7,10 @@ const STEPS = {
   //   "/booking/": 5
 };
 
-export const getCurrentStep = history => {
-  return STEPS[history.location.pathname];
+//next attribute was added later in order to use
+//this function in NextButton component
+export const getCurrentStep = (history, next = 0) => {
+  return STEPS[history.location.pathname] + next;
 };
 
 export const getLink = number => {

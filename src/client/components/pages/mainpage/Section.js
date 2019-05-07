@@ -19,10 +19,10 @@ export class Section extends Component {
         <LogIn show={showLogin} onClick={closeLogin} />
         <SignUp show={showSignUp} onClick={closeSignUp} />
         <Route path="/booking" component={BookingBar} />
-        <Route path="/booking" component={Summary} />
         <Route path="/booking/flight" component={FlightsContainer} />
         <Route path="/booking/seat" component={SeatSelection} />
         <Route path="/booking/luggage" component={LuggageContainer} />
+        <Route path="/booking" component={Summary} />
         <Route exact path="/" component={FlightInfoForm} />
       </div>
     );

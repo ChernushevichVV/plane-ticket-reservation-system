@@ -2,8 +2,6 @@ import React from "react";
 import FlightsList from "./FlightsList";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import Summary from "../../../misc/Summary";
-import NextButton from "../../../misc/NextButton";
 import FlightRoute from "./FlightRoute";
 
 const ConnectedFlightsContainer = props => {
@@ -29,12 +27,6 @@ const ConnectedFlightsContainer = props => {
           />
         </div>
       )}
-      <div className="summary-container">
-        <Summary cost="100$" />
-        <div className="summary-container__button">
-          <NextButton link="/booking/seat" />
-        </div>
-      </div>
     </>
   );
 };
